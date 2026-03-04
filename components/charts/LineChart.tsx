@@ -8,8 +8,8 @@ import {
   CartesianGrid,
 } from "recharts";
 import { materialColors } from "../../utils/CSSColors";
-import { Chart } from "../../base/containers/Chart";
-import { Text } from "../../base/text/Text";
+import { Chart } from "../../common/containers/Chart";
+import { Text } from "../../common/text/Text";
 import { useMemo } from "react";
 
 interface LineChartProps {

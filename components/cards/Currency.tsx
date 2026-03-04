@@ -1,7 +1,7 @@
-import { Card } from "../../base/cards/Card";
-import { Row } from "../../base/containers/Flex";
-import { Icons } from "../../base/icons/IconMap";
-import { Text } from "../../base/text/Text";
+import { Card } from "../../common/cards/Card";
+import { Row } from "../../common/containers/Flex";
+import { Icons } from "../../common/icons/IconMap";
+import { Text } from "../../common/text/Text";
 
 interface CurrencyCardProps {
   total: string;

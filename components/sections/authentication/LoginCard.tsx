@@ -1,4 +1,4 @@
-import { Text } from "../../../base/text/Text";
+import { Text } from "../../../common/text/Text";
 
 interface LoginSectionProps {
   data: {

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import { Row } from "../../base/containers/Flex";
-import { Text } from "../../base/text/Text";
+import { Row } from "../../common/containers/Flex";
+import { Text } from "../../common/text/Text";
 
 interface UserInitialsProps {
   name: string;
