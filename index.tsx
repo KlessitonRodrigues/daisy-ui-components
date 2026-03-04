@@ -1,4 +1,4 @@
-// Components
+// Common
 export * from "./common/containers/Flex";
 export * from "./common/containers/If";
 export * from "./common/containers/Page";
@@ -12,7 +12,6 @@ export * from "./common/inputs/CurrencyInputField";
 export * from "./common/inputs/RadioInputField";
 export * from "./common/icons/IconMap";
 export * from "./common/containers/Forms";
-export * from "./common/navigation/Navbar";
 export * from "./common/papers/Paper";
 export * from "./common/menu/Menu";
 export * from "./common/menu/DescriptionMenu";
@@ -30,7 +29,7 @@ export * from "./common/notifications/NotiifcationMenu";
 export * from "./common/badge/Bagde";
 export * from "./common/selector/Selector";
 
-// Commom
+// Components
 export * from "./components/sections/LoginCard";
 export * from "./components/charts/BarChart";
 export * from "./components/charts/LineChart";
@@ -39,6 +38,7 @@ export * from "./components/charts/RadarChart";
 export * from "./components/charts/RadialChart";
 export * from "./components/cards/Currency";
 export * from "./components/users/UserInitials";
+export * from "./components/navbars/FixedTopNavbar";
 
 // Utils
 export * from "./utils/CSSColors";

@@ -1,5 +1,5 @@
-import { Row } from "../../base/containers/Flex";
-import { Text } from "../../base/text/Text";
+import { Row } from "../../common/containers/Flex";
+import { Text } from "../../common/text/Text";
 import { IconProps, Icons } from "../icons/IconMap";
 
 interface TitleIconProps {

@@ -1,12 +1,12 @@
 "use client";
 import { useState } from "react";
-import { Icons } from "../../icons/IconMap";
-import If from "../../containers/If";
-import { Button } from "../../buttons/Button";
-import { Text } from "../../text/Text";
-import { Row } from "../../containers/Flex";
-import { UserInitials } from "../../../common/users/UserInitials";
-import { Badge } from "../../badge/Bagde";
+import { Icons } from "../../common/icons/IconMap";
+import If from "../../common/containers/If";
+import { Button } from "../../common/buttons/Button";
+import { Text } from "../../common/text/Text";
+import { Row } from "../../common/containers/Flex";
+import { UserInitials } from "../users/UserInitials";
+import { Badge } from "../../common/badge/Bagde";
 
 interface NavBarProps {
   title?: string;
