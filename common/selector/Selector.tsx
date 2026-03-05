@@ -7,22 +7,33 @@ interface SelectorProps {
   options?: { label: string; value: string }[];
   size?: "sm" | "md" | "lg";
   error?: string;
+  disabled?: boolean;
   onChange?: (value: string) => void;
 }
 
 export const Selector = (props: SelectorProps) => {
-  const { options, label, description, defaultValue, error, onChange } = props;
+  const {
+    options,
+    label,
+    description,
+    defaultValue,
+    error,
+    disabled,
+    onChange,
+  } = props;
   const selectClasses = [
     `w-full outline-none select select-${props.size || "md"}`,
   ];
   if (error) selectClasses.push("border-error");
+  if (disabled) selectClasses.push("opacity-50 cursor-not-allowed");
 
   return (
-    <fieldset className="fieldset w-full min-w-40">
+    <fieldset className="fieldset w-full">
       <legend className="fieldset-legend">{label}</legend>
       <select
         className={twMerge(selectClasses.join(" "))}
         defaultValue={defaultValue || "Select"}
+        disabled={disabled}
         onChange={(e) => onChange?.(e.target.value)}
       >
         {options?.map((option) => (

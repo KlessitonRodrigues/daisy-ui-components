@@ -13,7 +13,7 @@ export const Pagination = (props: PaginationProps) => {
   const { currentPage = 1, lastPage = 1, onPageChange } = props;
 
   return (
-    <Row flexX="end">
+    <Row flexX="end" gap={0}>
       <Button
         ghost
         size="sm"

@@ -1,3 +1,5 @@
+import { twMerge } from "tailwind-merge";
+
 interface TableProps {
   items: Record<string, any>[];
   columns: {
@@ -5,11 +7,12 @@ interface TableProps {
     key: string;
     render?: (item: any) => React.ReactNode;
   }[];
+  isLoading?: boolean;
   onSelect?: (item: any) => void;
 }
 
 export const Table = (props: TableProps) => {
-  const { items, columns, onSelect } = props;
+  const { items, columns, isLoading, onSelect } = props;
 
   const tableTitles = columns.map((column) => (
     <th key={column.key}>{column.label}</th>
@@ -17,8 +20,8 @@ export const Table = (props: TableProps) => {
 
   const tableRows = items.map((item, index) => (
     <tr
-      className="hover:bg-bg3 cursor-pointer"
       key={index}
+      className={twMerge("hover:bg-bg3 cursor-pointer")}
       onClick={() => onSelect?.(item)}
     >
       {columns.map((column) => (
@@ -30,12 +33,12 @@ export const Table = (props: TableProps) => {
   ));
 
   return (
-    <div className="overflow-x-auto min-h-130">
+    <div className="w-full overflow-x-auto">
       <table className="table">
         <thead className="bg-bg2">
           <tr>{tableTitles}</tr>
         </thead>
-        <tbody>{tableRows}</tbody>
+        <tbody data-loading={isLoading}>{tableRows}</tbody>
       </table>
     </div>
   );

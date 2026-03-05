@@ -6,6 +6,48 @@
 
 @source "../";
 
+@keyframes slide-down {
+  0% {
+    transform: translateY(-25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(25px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
 :root {
   /* Colors */
   --color-main: #597ef7;
@@ -28,6 +70,8 @@
   --color-default-black: #1f2937;
   --color-opacity-black: #0006;
   --color-default-border: #d1d5db;
+  --skeleton-base: #e5e7eb;
+  --skeleton-shimmer: #f3f4f6;
 
   /* Daisy theme */
   --size-field: 0.23rem;
@@ -116,6 +160,8 @@ body.dark {
   --color-default-black: #1f2937;
   --color-opacity-black: #0006;
   --color-default-border: #595959;
+  --skeleton-base: #4b5563;
+  --skeleton-shimmer: #6b7280;
 
   /* Daisy theme */
   --color-base-100: var(--color-bg1);
@@ -144,6 +190,28 @@ body.dark {
 input.hide-caret,
 textarea.hide-caret {
   caret-color: transparent;
+}
+
+/* Skeleton */
+/* Add data-loading to any element to show a skeleton shimmer.
+   Example: <div data-loading={isLoading}>...</div> */
+[data-loading][data-loading="true"] {
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--skeleton-base) 0%,
+    var(--skeleton-shimmer) 50%,
+    var(--skeleton-base) 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s linear infinite;
+}
+
+[data-loading][data-loading="true"] * {
+  opacity: 0.5;
 }
 
 .text-main {
@@ -280,35 +348,4 @@ textarea.hide-caret {
 .slide-up-delay-1000 {
   opacity: 0;
   animation: slide-up 0.5s ease-out 1s forwards;
-}
-
-@keyframes slide-down {
-  0% {
-    transform: translateY(-20px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-left {
-  0% {
-    transform: translateX(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-@keyframes slide-up {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 }

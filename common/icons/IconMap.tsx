@@ -1,5 +1,7 @@
 import { HTMLAttributes } from "react";
 import {
+  PiArrowDownBold,
+  PiArrowUpBold,
   PiBellBold,
   PiCalendar,
   PiCaretDoubleLeftBold,
@@ -8,6 +10,7 @@ import {
   PiCaretLineLeftBold,
   PiCaretLineRightBold,
   PiCaretRightBold,
+  PiCaretUpDown,
   PiChartLineBold,
   PiChartScatterBold,
   PiCheckBold,
@@ -25,7 +28,6 @@ import {
   PiMagnifyingGlassBold,
   PiMailbox,
   PiMailboxBold,
-  PiMapPinBold,
   PiMoneyBold,
   PiNumpadBold,
   PiPaintBrushBold,
@@ -81,6 +83,9 @@ export const IconMap = {
   notification: <PiBellBold size={"100%"} />,
   dollar: <PiMoneyBold size={"100%"} />,
   calendar: <PiCalendar size={"100%"} />,
+  upDownArrow: <PiCaretUpDown size={"100%"} />,
+  upArrow: <PiArrowUpBold size={"100%"} />,
+  downArrow: <PiArrowDownBold size={"100%"} />,
 };
 
 export interface IconProps extends HTMLAttributes<HTMLDivElement> {

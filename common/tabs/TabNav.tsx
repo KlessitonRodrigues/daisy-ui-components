@@ -15,7 +15,7 @@ export type TabListProps = {
     responsive?: "sm" | "md" | "lg";
     value?: string;
   }[];
-  onSelect?: (item: TabListProps["items"][number]) => void;
+  onSelect?: (item: TabListProps["items"][number], index: number) => void;
 };
 
 export const TabList = (props: TabListProps) => {
@@ -24,7 +24,7 @@ export const TabList = (props: TabListProps) => {
 
   const onSelectItem = (index: number) => {
     setTabIndex(index);
-    if (onSelect) onSelect(items[index]);
+    if (onSelect) onSelect(items[index], index);
   };
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export const TabList = (props: TabListProps) => {
 
   const tabOptions = useMemo(() => {
     return items.map((item, index) => {
-      const classNames = ["tab tabs-lg text-sm gap-2"];
+      const classNames = ["tab tabs-lg text-xs text-fg1 gap-1 hover:bg-bg2"];
       if (tabIndex === index) classNames.push("tab-active");
       if (item.disabled) classNames.push("tab-disabled");
       if (item.color) classNames.push(`text-${item.color}`);
@@ -55,7 +55,7 @@ export const TabList = (props: TabListProps) => {
 
   return (
     <div className={twMerge("w-full", className)} {...tabListProps}>
-      <div role="tablist" className="tabs flex tabs-lift lg:flex-nowrap">
+      <div role="tablist" className="tabs tabs-lift">
         {tabOptions}
         <div className="flex-1 border-b" />
       </div>
