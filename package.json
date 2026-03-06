@@ -19,6 +19,7 @@
     "daisyui": "^5.5.18",
     "motion": "^12.34.0",
     "react": "^19.2.3",
+    "react-hook-form": "^7.71.2",
     "react-icons": "^5.5.0",
     "react-select": "^5.10.2",
     "react-toastify": "^11.0.5",

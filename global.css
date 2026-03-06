@@ -333,13 +333,13 @@ textarea.hide-caret {
 }
 
 .slide-down {
-  animation: slide-down 0.5s ease-out forwards;
+  animation: slide-down 0.3s ease-out forwards;
 }
 .slide-left {
-  animation: slide-left 0.5s ease-out forwards;
+  animation: slide-left 0.3s ease-out forwards;
 }
 .slide-up {
-  animation: slide-up 0.5s ease-out forwards;
+  animation: slide-up 0.3s ease-out forwards;
 }
 .slide-up-delay-500 {
   opacity: 0;

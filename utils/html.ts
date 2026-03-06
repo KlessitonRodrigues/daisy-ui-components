@@ -1,5 +1,3 @@
-import { KeyboardEvent } from "react";
-
 export const getBrowserWindow = () => {
   if (typeof window === "undefined") return null;
   return window;
@@ -46,6 +44,7 @@ export const getDefaultLanguage = () => {
   const window = getBrowserWindow();
   if (!window) return "en";
   const browserLang = window.navigator.language || "en";
+
   const lang = browserLang.split("-")[0];
   setDefaultLanguage(lang);
 

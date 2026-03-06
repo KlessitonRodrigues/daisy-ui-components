@@ -39,6 +39,7 @@ export * from "./components/charts/RadialChart";
 export * from "./components/cards/Currency";
 export * from "./components/users/UserInitials";
 export * from "./components/navbars/FixedTopNavbar";
+export * from "./components/i18n/RedirectPage";
 
 // Utils
 export * from "./utils/CSSColors";
