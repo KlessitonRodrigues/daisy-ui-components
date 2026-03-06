@@ -30,7 +30,7 @@ export * from "./common/badge/Bagde";
 export * from "./common/selector/Selector";
 
 // Components
-export * from "./components/sections/LoginCard";
+export * from "./components/sections/authentication/LoginCard";
 export * from "./components/charts/BarChart";
 export * from "./components/charts/LineChart";
 export * from "./components/charts/PieChart";
