@@ -28,6 +28,7 @@ export * from "./common/switch/Switch";
 export * from "./common/notifications/NotiifcationMenu";
 export * from "./common/badge/Bagde";
 export * from "./common/selector/Selector";
+export * from "./common/modal/ConfirmModal";
 
 // Components
 export * from "./components/sections/authentication/LoginCard";

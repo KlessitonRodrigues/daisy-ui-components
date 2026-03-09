@@ -59,7 +59,9 @@ export const TabList = (props: TabListProps) => {
         {tabOptions}
         <div className="flex-1 border-b" />
       </div>
-      <div className="mt-2">{items[tabIndex]?.content}</div>
+      <div key={tabIndex} className="mt-2 slide-left">
+        {items[tabIndex]?.content}
+      </div>
     </div>
   );
 };

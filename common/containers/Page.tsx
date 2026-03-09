@@ -31,7 +31,7 @@ export const PageContent = ({ className, ...props }: IPage) => {
   return (
     <div
       {...props}
-      className={twMerge(`w-full h-full p-2 xl:p-0 ${className}`)}
+      className={twMerge(`w-full h-full px-2 xl:px-0 ${className}`)}
     />
   );
 };

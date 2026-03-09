@@ -37,6 +37,7 @@ import {
   PiQuestionMarkBold,
   PiSignInBold,
   PiSignOutBold,
+  PiTableBold,
   PiUserBold,
   PiUserPlus,
   PiXBold,
@@ -86,6 +87,7 @@ export const IconMap = {
   upDownArrow: <PiCaretUpDown size={"100%"} />,
   upArrow: <PiArrowUpBold size={"100%"} />,
   downArrow: <PiArrowDownBold size={"100%"} />,
+  list: <PiListBold size={"100%"} />,
 };
 
 export interface IconProps extends HTMLAttributes<HTMLDivElement> {
