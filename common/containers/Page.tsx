@@ -1,6 +1,9 @@
 import { twMerge } from "tailwind-merge";
 
-type IPage = React.HTMLAttributes<HTMLDivElement>;
+interface IPage {
+  className?: string;
+  children: React.ReactNode;
+}
 
 export const Page = ({ className, ...props }: IPage) => {
   return (
@@ -20,6 +23,15 @@ export const PageFull = ({ className, ...props }: IPage) => {
       className={twMerge(
         `w-screen h-screen overflow-hidden overflow-y-auto ${className}`,
       )}
+    />
+  );
+};
+
+export const PageContent = ({ className, ...props }: IPage) => {
+  return (
+    <div
+      {...props}
+      className={twMerge(`w-full h-full p-2 xl:p-0 ${className}`)}
     />
   );
 };
