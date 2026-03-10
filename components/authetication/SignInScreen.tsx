@@ -1,6 +1,6 @@
-import { Text } from "../../../common/text/Text";
+import { Text } from "../../common/text/Text";
 
-interface LoginSectionProps {
+interface SignInScreenProps {
   data: {
     title: string;
     description: string;
@@ -15,7 +15,7 @@ interface LoginSectionProps {
   };
 }
 
-export const LoginCardSection = (props: LoginSectionProps) => {
+export const SignInScreen = (props: SignInScreenProps) => {
   const { data, loginForm, bgGradient } = props;
   const backgroundImage = `linear-gradient(145deg, ${bgGradient?.from}, ${bgGradient?.to})`;
   const sectionImg = {

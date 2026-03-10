@@ -343,9 +343,9 @@ textarea.hide-caret {
 }
 .slide-up-delay-500 {
   opacity: 0;
-  animation: slide-up 0.5s ease-out 0.5s;
+  animation: slide-up 0.5s ease-out 0.5s forwards;
 }
 .slide-up-delay-1000 {
   opacity: 0;
-  animation: slide-up 0.5s ease-out 1s;
+  animation: slide-up 0.5s ease-out 1s forwards;
 }

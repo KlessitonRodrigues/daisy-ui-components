@@ -31,7 +31,8 @@ export * from "./common/selector/Selector";
 export * from "./common/modal/ConfirmModal";
 
 // Components
-export * from "./components/sections/authentication/LoginCard";
+export * from "./components/authetication/SignInScreen";
+export * from "./components/authetication/SignInScreenV2";
 export * from "./components/charts/BarChart";
 export * from "./components/charts/LineChart";
 export * from "./components/charts/PieChart";
