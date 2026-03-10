@@ -1,9 +1,10 @@
-"use client";
-import { RadialBarChart, RadialBar, Legend, Tooltip } from "recharts";
-import { materialColors } from "../../utils/CSSColors";
-import { Chart } from "../../common/containers/Chart";
-import { Text } from "../../common/text/Text";
-import { useMemo } from "react";
+'use client';
+import { useMemo } from 'react';
+import { Legend, RadialBar, RadialBarChart, Tooltip } from 'recharts';
+
+import { Chart } from '../../common/containers/Chart';
+import { Text } from '../../common/text/Text';
+import { materialColors } from '../../utils/CSSColors';
 
 interface RadialChartProps {
   title?: string;
@@ -14,13 +15,13 @@ interface RadialChartProps {
 }
 
 const colors = [
-  materialColors.green["300"],
-  materialColors.blue["300"],
-  materialColors.red["300"],
-  materialColors.indigo["300"],
-  materialColors.purple["300"],
-  materialColors.brown["300"],
-  materialColors.teal["300"],
+  materialColors.green['300'],
+  materialColors.blue['300'],
+  materialColors.red['300'],
+  materialColors.indigo['300'],
+  materialColors.purple['300'],
+  materialColors.brown['300'],
+  materialColors.teal['300'],
 ];
 
 export const RadialChartComponent = (props: RadialChartProps) => {
@@ -36,14 +37,14 @@ export const RadialChartComponent = (props: RadialChartProps) => {
   );
 
   return (
-    <Chart className={className || ""}>
+    <Chart className={className || ''}>
       <Text tag="h3" bold className="text-center">
-        {title || "Radial Chart"}
+        {title || 'Radial Chart'}
       </Text>
       <RadialBarChart
         responsive
         className="w-full max-h-100 mx-auto text-[13px] font-bold"
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: '100%', height: '100%' }}
         innerRadius="10%"
         outerRadius="110%"
         cx="50%"
@@ -53,18 +54,12 @@ export const RadialChartComponent = (props: RadialChartProps) => {
         endAngle={0}
       >
         <RadialBar
-          label={{ fill: materialColors.grey["100"], position: "insideStart" }}
+          label={{ fill: materialColors.grey['100'], position: 'insideStart' }}
           background
-          dataKey={dataField || "uv"}
+          dataKey={dataField || 'uv'}
           isAnimationActive={isAnimationActive}
         />
-        <Legend
-          height={24}
-          iconSize={16}
-          layout="horizontal"
-          verticalAlign="top"
-          align="center"
-        />
+        <Legend height={24} iconSize={16} layout="horizontal" verticalAlign="top" align="center" />
         <Tooltip />
       </RadialBarChart>
     </Chart>

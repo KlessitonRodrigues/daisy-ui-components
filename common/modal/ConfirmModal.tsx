@@ -1,18 +1,19 @@
-"use client";
-import { useState } from "react";
-import { Row } from "../containers/Flex";
-import { Button } from "../buttons/Button";
-import { Text } from "../text/Text";
+'use client';
+import { useState } from 'react';
+
+import { Button } from '../buttons/Button';
+import { Row } from '../containers/Flex';
+import { Text } from '../text/Text';
 
 interface ConfirmModalProps {
   message: string;
-  color?: "primary" | "error" | "info" | "success";
+  color?: 'primary' | 'error' | 'info' | 'success';
   children: React.ReactNode;
   onConfirm?: () => any;
 }
 
 export const ConfirmModal = (props: ConfirmModalProps) => {
-  const { message, children, onConfirm, color = "primary" } = props;
+  const { message, children, onConfirm, color = 'primary' } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   const handleCancel = () => {

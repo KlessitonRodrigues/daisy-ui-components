@@ -1,20 +1,18 @@
 interface BadgeProps {
   content: string | number;
-  size?: "xs" | "sm" | "md" | "lg";
-  color?: "main" | "blue" | "red" | "green" | "yellow" | "purple" | "gray";
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  color?: 'main' | 'blue' | 'red' | 'green' | 'yellow' | 'purple' | 'gray';
   children?: React.ReactNode;
 }
 
 export const Badge = (props: BadgeProps) => {
-  const { content, size = "xs", color = "main", children } = props;
+  const { content, size = 'xs', color = 'main', children } = props;
 
   if (!content) return <>{children}</>;
 
   return (
     <div className="indicator">
-      <span className={`indicator-item badge badge-${size} badge-${color}`}>
-        {content}
-      </span>
+      <span className={`indicator-item badge badge-${size} badge-${color}`}>{content}</span>
       {children && <div className="badge-children">{children}</div>}
     </div>
   );

@@ -1,7 +1,7 @@
-"use client";
-import { Icons } from "../icons/IconMap";
-import { Row } from "../containers/Flex";
-import { Text } from "../text/Text";
+'use client';
+import { Row } from '../containers/Flex';
+import { Icons } from '../icons/IconMap';
+import { Text } from '../text/Text';
 
 interface SwitchProps {
   label: string;
@@ -22,7 +22,7 @@ export const Switch = (props: SwitchProps) => {
         <input
           type="checkbox"
           defaultChecked={checked}
-          onChange={(e) => onChange?.(e.target.checked)}
+          onChange={e => onChange?.(e.target.checked)}
         />
         <Icons icon="close" size="16" aria-label="enabled" />
         <Icons icon="checkMark" size="16" aria-label="disabled" />

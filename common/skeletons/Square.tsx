@@ -1,5 +1,5 @@
-import { HTMLAttributes } from "react";
-import { twMerge } from "tailwind-merge";
+import { HTMLAttributes } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface SquareSkeletonProps extends HTMLAttributes<HTMLDivElement> {
   show?: boolean;
@@ -7,8 +7,8 @@ interface SquareSkeletonProps extends HTMLAttributes<HTMLDivElement> {
 
 export const SquareSkeleton = (props: SquareSkeletonProps) => {
   const { className, show, children, ...skeletonProps } = props;
-  const classNames = ["skeleton w-full h-40 rounded-sm"];
-  classNames.push(className || "");
+  const classNames = ['skeleton w-full h-40 rounded-sm'];
+  classNames.push(className || '');
 
   if (!show) return <>{children}</>;
 

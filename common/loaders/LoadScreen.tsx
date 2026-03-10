@@ -1,6 +1,7 @@
-import { HTMLAttributes } from "react";
-import { twMerge } from "tailwind-merge";
-import { Text } from "../text/Text";
+import { HTMLAttributes } from 'react';
+import { twMerge } from 'tailwind-merge';
+
+import { Text } from '../text/Text';
 
 export interface LoadScreenProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -12,9 +13,7 @@ export const LoadScreen = (props: LoadScreenProps) => {
 
   return (
     <div
-      className={twMerge(
-        `absolute w-screen h-screen bg-black z-50 ${className}`,
-      )}
+      className={twMerge(`absolute w-screen h-screen bg-black z-50 ${className}`)}
       {...loadScreenProps}
     >
       <div className="m-auto flex gap-4 items-center justify-center h-full">

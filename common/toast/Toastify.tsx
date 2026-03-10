@@ -1,16 +1,11 @@
-import { toast, ToastContainer } from "react-toastify";
-import { materialColors } from "../../utils/CSSColors";
-import { Icons } from "../icons/IconMap";
+import { ToastContainer, toast } from 'react-toastify';
+
+import { materialColors } from '../../utils/CSSColors';
+import { Icons } from '../icons/IconMap';
 
 export const Toastify = () => {
   return (
-    <ToastContainer
-      position="top-right"
-      theme="colored"
-      autoClose={6000}
-      pauseOnHover
-      stacked
-    />
+    <ToastContainer position="top-right" theme="colored" autoClose={6000} pauseOnHover stacked />
   );
 };
 

@@ -1,10 +1,11 @@
-import { twMerge } from "tailwind-merge";
-import { Row } from "../containers/Flex";
+import { twMerge } from 'tailwind-merge';
+
+import { Row } from '../containers/Flex';
 
 interface RadioInputFieldProps {
   className?: string;
   name: string;
-  size?: "sm" | "md" | "lg";
+  size?: 'sm' | 'md' | 'lg';
   options: { label: string; value: string }[];
   defaultValue?: string;
   onChange?: (value: string) => void;
@@ -12,7 +13,7 @@ interface RadioInputFieldProps {
 
 export const RadioInputField = (props: RadioInputFieldProps) => {
   const { className, name, size, options, defaultValue, onChange } = props;
-  const iptStyle = ["radio radio-primary mx-2"];
+  const iptStyle = ['radio radio-primary mx-2'];
   if (size) iptStyle.push(`radio-${size}`);
 
   return (

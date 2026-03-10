@@ -1,17 +1,18 @@
-"use client";
+'use client';
+import { useMemo } from 'react';
 import {
-  RadarChart,
-  Radar,
   Legend,
-  Tooltip,
-  PolarGrid,
   PolarAngleAxis,
+  PolarGrid,
   PolarRadiusAxis,
-} from "recharts";
-import { materialColors } from "../../utils/CSSColors";
-import { Chart } from "../../common/containers/Chart";
-import { Text } from "../../common/text/Text";
-import { useMemo } from "react";
+  Radar,
+  RadarChart,
+  Tooltip,
+} from 'recharts';
+
+import { Chart } from '../../common/containers/Chart';
+import { Text } from '../../common/text/Text';
+import { materialColors } from '../../utils/CSSColors';
 
 interface RadarChartProps {
   title?: string;
@@ -22,13 +23,13 @@ interface RadarChartProps {
 }
 
 const radarColors = [
-  materialColors.green["300"],
-  materialColors.blue["300"],
-  materialColors.red["300"],
-  materialColors.indigo["300"],
-  materialColors.purple["300"],
-  materialColors.brown["300"],
-  materialColors.teal["300"],
+  materialColors.green['300'],
+  materialColors.blue['300'],
+  materialColors.red['300'],
+  materialColors.indigo['300'],
+  materialColors.purple['300'],
+  materialColors.brown['300'],
+  materialColors.teal['300'],
 ];
 
 export const RadarChartComponent = (props: RadarChartProps) => {
@@ -48,14 +49,14 @@ export const RadarChartComponent = (props: RadarChartProps) => {
   }, [dataFields]);
 
   return (
-    <Chart className={className || ""}>
+    <Chart className={className || ''}>
       <Text tag="h3" bold className="text-center">
-        {title || "Radar Chart"}
+        {title || 'Radar Chart'}
       </Text>
       <RadarChart
         responsive
         className="w-full max-h-100 mx-auto text-[13px] font-bold"
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: '100%', height: '100%' }}
         data={data}
       >
         <PolarGrid />

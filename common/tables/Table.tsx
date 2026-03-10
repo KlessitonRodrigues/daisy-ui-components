@@ -1,19 +1,19 @@
-import { useMemo } from "react";
+import { useMemo } from 'react';
 
 export interface TableProps {
   items: Record<string, any>[];
   columns: {
     label: string;
     key: string;
-    responsive?: "sm" | "md" | "lg";
+    responsive?: 'sm' | 'md' | 'lg';
     render?: (item: any) => React.ReactNode;
   }[];
   isLoading?: boolean;
   onSelect?: (item: any) => void;
 }
 
-const getResponsiveStyle = (responsive?: "sm" | "md" | "lg") => {
-  if (!responsive) return "";
+const getResponsiveStyle = (responsive?: 'sm' | 'md' | 'lg') => {
+  if (!responsive) return '';
   // sm:table-cell md:table-cell lg:table-cell
   return `hidden ${responsive}:table-cell`;
 };
@@ -31,16 +31,9 @@ export const Table = (props: TableProps) => {
 
   const tableRows = useMemo(() => {
     return items.map((item, index) => (
-      <tr
-        key={index}
-        className="hover:bg-bg3 cursor-pointer"
-        onClick={() => onSelect?.(item)}
-      >
-        {columns.map((column) => (
-          <td
-            key={column.key}
-            className={getResponsiveStyle(column.responsive)}
-          >
+      <tr key={index} className="hover:bg-bg3 cursor-pointer" onClick={() => onSelect?.(item)}>
+        {columns.map(column => (
+          <td key={column.key} className={getResponsiveStyle(column.responsive)}>
             {column.render ? column.render(item) : item[column.key]}
           </td>
         ))}

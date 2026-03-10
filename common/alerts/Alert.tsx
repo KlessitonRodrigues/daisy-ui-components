@@ -1,12 +1,12 @@
-import { HTMLAttributes } from "react";
-import { twMerge } from "tailwind-merge";
+import { HTMLAttributes } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 interface AlertProps extends HTMLAttributes<HTMLDivElement> {}
 
 export const Alert = (props: AlertProps) => {
   const { className, children, ...alertProps } = props;
-  const classNames = ["alert alert-success"];
-  classNames.push(className || "");
+  const classNames = ['alert alert-success'];
+  classNames.push(className || '');
 
   return (
     <div role="alert" className={twMerge(...classNames)} {...alertProps}>

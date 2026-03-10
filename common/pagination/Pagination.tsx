@@ -1,7 +1,7 @@
-import { Button } from "../buttons/Button";
-import { Row } from "../containers/Flex";
-import { Icons } from "../icons/IconMap";
-import { Text } from "../text/Text";
+import { Button } from '../buttons/Button';
+import { Row } from '../containers/Flex';
+import { Icons } from '../icons/IconMap';
+import { Text } from '../text/Text';
 
 interface PaginationProps {
   currentPage?: number;

@@ -1,20 +1,13 @@
-import { twMerge } from "tailwind-merge";
-import { IconProps, Icons } from "../icons/IconMap";
+import { twMerge } from 'tailwind-merge';
+
+import { IconProps, Icons } from '../icons/IconMap';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
   onClick?: () => void;
-  color?:
-    | "primary"
-    | "secondary"
-    | "accent"
-    | "neutral"
-    | "info"
-    | "success"
-    | "warning"
-    | "error";
-  size?: "xs" | "sm" | "md" | "lg";
-  variant?: "wide" | "block" | "square" | "circle";
+  color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error';
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  variant?: 'wide' | 'block' | 'square' | 'circle';
   ghost?: boolean;
   link?: boolean;
   loading?: boolean;
@@ -23,12 +16,12 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 export const Button = (props: ButtonProps) => {
   const { className, ghost, link, loading, ...btnProps } = props;
 
-  const btnClasses = ["btn rounded-sm"];
-  if (ghost) btnClasses.push("btn-ghost");
-  if (link) btnClasses.push("btn-link");
+  const btnClasses = ['btn rounded-sm'];
+  if (ghost) btnClasses.push('btn-ghost');
+  if (link) btnClasses.push('btn-link');
   if (props.variant) btnClasses.push(`btn-${props.variant}`);
-  btnClasses.push(`btn-${props.color || ""}`);
-  btnClasses.push(`btn-${props.size || "md"}`);
+  btnClasses.push(`btn-${props.color || ''}`);
+  btnClasses.push(`btn-${props.size || 'md'}`);
 
   return (
     <button
@@ -46,7 +39,7 @@ export const IconButton = (props: IconProps & ButtonProps) => {
   const { children, ...btnProps } = props;
   return (
     <Button {...btnProps}>
-      <Icons icon={props.icon} size={props.size || "22"} />
+      <Icons icon={props.icon} size={props.size || '22'} />
       {children}
     </Button>
   );

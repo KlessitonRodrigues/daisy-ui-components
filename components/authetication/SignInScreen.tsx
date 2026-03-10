@@ -1,4 +1,4 @@
-import { Text } from "../../common/text/Text";
+import { Text } from '../../common/text/Text';
 
 interface SignInScreenProps {
   data: {
@@ -27,10 +27,7 @@ export const SignInScreen = (props: SignInScreenProps) => {
     <div className="flex w-full lg:h-full" style={{ backgroundImage }}>
       <div className="w-full m-auto lg:flex lg:max-w-7xl bg-bg1 lg:shadow-lg lg:rounded-lg overflow-hidden">
         <div className="w-full h-150 lg:h-auto p-8 bg-no-repeat bg-cover text-white relative">
-          <div
-            className="absolute inset-0 bg-no-repeat bg-center bg-cover"
-            style={sectionImg}
-          />
+          <div className="absolute inset-0 bg-no-repeat bg-center bg-cover" style={sectionImg} />
           <div className="relative z-10 space-y-8">
             <Text tag="h1" fs="4xl" bold className="slide-up">
               {data.title}

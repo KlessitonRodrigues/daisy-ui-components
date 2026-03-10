@@ -1,6 +1,7 @@
-import { useMemo } from "react";
-import { Row } from "../../common/containers/Flex";
-import { Text } from "../../common/text/Text";
+import { useMemo } from 'react';
+
+import { Row } from '../../common/containers/Flex';
+import { Text } from '../../common/text/Text';
 
 interface UserInitialsProps {
   name: string;
@@ -11,17 +12,14 @@ export const UserInitials = (props: UserInitialsProps) => {
 
   const initials = useMemo(() => {
     return name
-      .split(" ")
-      .map((part) => part[0])
-      .join("")
+      .split(' ')
+      .map(part => part[0])
+      .join('')
       .toUpperCase();
   }, [name]);
 
   return (
-    <Row
-      flexX="center"
-      className="h-9 w-9 min-w-9 min-h-9 border rounded-full bg-bg1 text-fg1"
-    >
+    <Row flexX="center" className="h-9 w-9 min-w-9 min-h-9 border rounded-full bg-bg1 text-fg1">
       <Text bold fs="lg" fo="80" className="mt-0.5">
         {initials}
       </Text>

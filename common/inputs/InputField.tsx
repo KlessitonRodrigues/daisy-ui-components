@@ -1,9 +1,9 @@
-import { twMerge } from "tailwind-merge";
-import { HTMLAttributes } from "react";
+import { HTMLAttributes } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 export interface InputFieldProps extends HTMLAttributes<HTMLDivElement> {
-  size?: "sm" | "md" | "lg";
-  type?: "text" | "email" | "password" | "number" | "date";
+  size?: 'sm' | 'md' | 'lg';
+  type?: 'text' | 'email' | 'password' | 'number' | 'date';
   placeholder?: string;
   label?: string;
   className?: string;
@@ -17,23 +17,23 @@ export interface InputFieldProps extends HTMLAttributes<HTMLDivElement> {
 
 export const InputField = (props: InputFieldProps) => {
   const { className } = props;
-  const inputClasses = ["input outline-none w-full"];
-  const fieldsetClasses = ["fieldset w-full"];
-  const iptClasses = ["text-base"];
+  const inputClasses = ['input outline-none w-full'];
+  const fieldsetClasses = ['fieldset w-full'];
+  const iptClasses = ['text-base'];
 
-  if (props.error) inputClasses.push("input-error");
-  if (inputClasses.includes("input-md")) fieldsetClasses.push(`-mb-4`);
-  if (props.hideCaret) iptClasses.push("hide-caret focus:text-primary");
-  inputClasses.push(`input-${props.size || "md"}`);
+  if (props.error) inputClasses.push('input-error');
+  if (inputClasses.includes('input-md')) fieldsetClasses.push(`-mb-4`);
+  if (props.hideCaret) iptClasses.push('hide-caret focus:text-primary');
+  inputClasses.push(`input-${props.size || 'md'}`);
 
   return (
-    <fieldset className={fieldsetClasses.join(" ")}>
+    <fieldset className={fieldsetClasses.join(' ')}>
       <legend className="fieldset-legend">{props.label}</legend>
-      <label className={twMerge(inputClasses.join(" "), className)}>
+      <label className={twMerge(inputClasses.join(' '), className)}>
         {props.before}
         <input
-          className={iptClasses.join(" ")}
-          type={props.type || "text"}
+          className={iptClasses.join(' ')}
+          type={props.type || 'text'}
           placeholder={props.placeholder}
           disabled={props.disabled}
           {...props.inputProps}

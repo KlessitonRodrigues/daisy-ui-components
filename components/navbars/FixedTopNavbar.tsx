@@ -1,12 +1,13 @@
-"use client";
-import { useState } from "react";
-import { Icons } from "../../common/icons/IconMap";
-import If from "../../common/containers/If";
-import { Button } from "../../common/buttons/Button";
-import { Text } from "../../common/text/Text";
-import { Row } from "../../common/containers/Flex";
-import { UserInitials } from "../users/UserInitials";
-import { Badge } from "../../common/badge/Bagde";
+'use client';
+import { useState } from 'react';
+
+import { Badge } from '../../common/badge/Bagde';
+import { Button } from '../../common/buttons/Button';
+import { Row } from '../../common/containers/Flex';
+import If from '../../common/containers/If';
+import { Icons } from '../../common/icons/IconMap';
+import { Text } from '../../common/text/Text';
+import { UserInitials } from '../users/UserInitials';
 
 interface NavBarProps {
   title?: string;
@@ -77,7 +78,7 @@ export const NavBar = (props: NavBarProps) => {
           <Row flexY="center">
             <Icons icon="chart" size="28" />
             <Text fs="xl" bold>
-              {title || "Application"}
+              {title || 'Application'}
             </Text>
           </Row>
 
@@ -102,7 +103,7 @@ export const NavBar = (props: NavBarProps) => {
               onClick={() => handleUserMenu()}
               onMouseEnter={() => handleUserMenu(true)}
             >
-              <UserInitials name={userName || "User Name"} />
+              <UserInitials name={userName || 'User Name'} />
             </Button>
           </Row>
         </Row>
@@ -110,21 +111,21 @@ export const NavBar = (props: NavBarProps) => {
 
       <div
         className="absolute w-full lg:w-auto h-[93vh] max-w-md left-0 top-full z-10 overflow-hidden fade-down shadow-md transition"
-        style={{ width: menuOpen ? "100%" : "0" }}
+        style={{ width: menuOpen ? '100%' : '0' }}
       >
         <div className="min-w-md h-full">{sidebarComponent}</div>
       </div>
 
       <div
         className="absolute max-w-md right-0 top-full z-10 overflow-hidden fade-down shadow-md transition"
-        style={{ width: notificationsOpen ? "100%" : "0" }}
+        style={{ width: notificationsOpen ? '100%' : '0' }}
       >
         <div className="min-w-md h-full">{notificationsComponent}</div>
       </div>
 
       <div
         className="absolute max-w-xs right-0 top-full z-10 overflow-hidden fade-down shadow-md transition"
-        style={{ width: userMenuOpen ? "100%" : "0" }}
+        style={{ width: userMenuOpen ? '100%' : '0' }}
       >
         <div className="min-w-xs h-full">{userMenuComponent}</div>
       </div>

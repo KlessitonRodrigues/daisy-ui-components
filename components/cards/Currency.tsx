@@ -1,7 +1,7 @@
-import { Card } from "../../common/cards/Card";
-import { Row } from "../../common/containers/Flex";
-import { Icons } from "../../common/icons/IconMap";
-import { Text } from "../../common/text/Text";
+import { Card } from '../../common/cards/Card';
+import { Row } from '../../common/containers/Flex';
+import { Icons } from '../../common/icons/IconMap';
+import { Text } from '../../common/text/Text';
 
 interface CurrencyCardProps {
   total: string;
@@ -19,7 +19,7 @@ export const CurrencyCard = (props: CurrencyCardProps) => {
         <Text bold fo="70">
           {total}
         </Text>
-        <Text bold fo="70" className={percentageClassName || "text-green"}>
+        <Text bold fo="70" className={percentageClassName || 'text-green'}>
           + {percentage}%
         </Text>
       </Row>

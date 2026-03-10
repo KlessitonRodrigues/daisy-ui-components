@@ -1,10 +1,10 @@
-import { Row } from "../../common/containers/Flex";
-import { Text } from "../../common/text/Text";
-import { IconProps, Icons } from "../icons/IconMap";
+import { Row } from '../../common/containers/Flex';
+import { Text } from '../../common/text/Text';
+import { IconProps, Icons } from '../icons/IconMap';
 
 interface TitleIconProps {
   title?: string;
-  icon?: IconProps["icon"];
+  icon?: IconProps['icon'];
 }
 
 export const TitleIcon = (props: TitleIconProps) => {

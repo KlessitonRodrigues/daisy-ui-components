@@ -1,17 +1,10 @@
-"use client";
-import {
-  BarChart,
-  Bar,
-  Legend,
-  Tooltip,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-} from "recharts";
-import { materialColors } from "../../utils/CSSColors";
-import { Chart } from "../../common/containers/Chart";
-import { Text } from "../../common/text/Text";
-import { useMemo } from "react";
+'use client';
+import { useMemo } from 'react';
+import { Bar, BarChart, CartesianGrid, Legend, Tooltip, XAxis, YAxis } from 'recharts';
+
+import { Chart } from '../../common/containers/Chart';
+import { Text } from '../../common/text/Text';
+import { materialColors } from '../../utils/CSSColors';
 
 interface BarChartProps {
   title?: string;
@@ -23,52 +16,52 @@ interface BarChartProps {
 }
 
 const barColors = [
-  materialColors.green["300"],
-  materialColors.blue["300"],
-  materialColors.red["300"],
-  materialColors.indigo["300"],
-  materialColors.purple["300"],
-  materialColors.brown["300"],
-  materialColors.teal["300"],
+  materialColors.green['300'],
+  materialColors.blue['300'],
+  materialColors.red['300'],
+  materialColors.indigo['300'],
+  materialColors.purple['300'],
+  materialColors.brown['300'],
+  materialColors.teal['300'],
 ];
 
 export const BarChartComponent = (props: BarChartProps) => {
   const { title, data, xField, yField, dataFields, className } = props;
 
   const chartBars = useMemo(() => {
-    return dataFields?.map((field) => (
+    return dataFields?.map(field => (
       <Bar
         key={field}
         dataKey={field}
         fill={barColors[dataFields.indexOf(field) % barColors.length]}
-        label={{ position: yField ? "right" : "top" }}
+        label={{ position: yField ? 'right' : 'top' }}
         radius={yField ? [0, 5, 5, 0] : [5, 5, 0, 0]}
       />
     ));
   }, [dataFields, yField]);
 
   return (
-    <Chart className={className || ""}>
+    <Chart className={className || ''}>
       <Text tag="h3" bold className="text-center">
-        {title || "Bar Chart"}
+        {title || 'Bar Chart'}
       </Text>
       <BarChart
         responsive
-        className={"w-full max-h-100 text-[13px] font-bold"}
-        style={{ width: "100%", height: "100%" }}
-        layout={yField ? "vertical" : "horizontal"}
+        className={'w-full max-h-100 text-[13px] font-bold'}
+        style={{ width: '100%', height: '100%' }}
+        layout={yField ? 'vertical' : 'horizontal'}
         data={data}
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis
           dataKey={xField}
-          type={yField ? "number" : "category"}
-          stroke={materialColors.grey["500"]}
+          type={yField ? 'number' : 'category'}
+          stroke={materialColors.grey['500']}
         />
         <YAxis
           dataKey={yField}
-          type={xField ? "number" : "category"}
-          stroke={materialColors.grey["500"]}
+          type={xField ? 'number' : 'category'}
+          stroke={materialColors.grey['500']}
         />
         <Tooltip />
         {chartBars}

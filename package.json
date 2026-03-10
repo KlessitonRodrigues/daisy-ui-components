@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "@hookform/resolvers": "^5.2.2",
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
     "daisyui": "^5.5.18",
     "motion": "^12.34.0",
     "react": "^19.2.3",

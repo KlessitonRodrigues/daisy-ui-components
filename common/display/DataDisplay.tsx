@@ -1,5 +1,5 @@
-import { Column } from "../containers/Flex";
-import { Text } from "../text/Text";
+import { Column } from '../containers/Flex';
+import { Text } from '../text/Text';
 
 type IDataDisplay = React.HTMLAttributes<HTMLDivElement> & {
   label?: string;
@@ -13,7 +13,7 @@ export const DataDisplay = (props: IDataDisplay) => {
       <Text bold fs="sm" fo="80" className="text-main">
         {label}
       </Text>
-      <Text>{value || ""}</Text>
+      <Text>{value || ''}</Text>
     </Column>
   );
 };

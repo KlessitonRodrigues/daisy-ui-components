@@ -1,12 +1,13 @@
-import { HTMLAttributes } from "react";
-import { twMerge } from "tailwind-merge";
-import { IconProps, Icons } from "../icons/IconMap";
-import { Text } from "../text/Text";
-import Link from "next/link";
+import Link from 'next/link';
+import { HTMLAttributes } from 'react';
+import { twMerge } from 'tailwind-merge';
+
+import { IconProps, Icons } from '../icons/IconMap';
+import { Text } from '../text/Text';
 
 export interface MenuProps extends HTMLAttributes<HTMLUListElement> {
   items?: {
-    icon: IconProps["icon"];
+    icon: IconProps['icon'];
     label: string;
     href?: string;
     active?: boolean;
@@ -22,7 +23,7 @@ export const Menu = (props: MenuProps) => {
     <ul className={twMerge(...classNames)} {...menuProps}>
       {items?.map((item, index) => (
         <li key={index}>
-          <Link href={item.href || ""} onClick={item.onClick}>
+          <Link href={item.href || ''} onClick={item.onClick}>
             <div className="w-8 h-8 border rounded-md p-1">
               <Icons icon={item.icon} size="22" className="mr-2" />
             </div>

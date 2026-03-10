@@ -1,16 +1,10 @@
-"use client";
-import {
-  LineChart,
-  Line,
-  Legend,
-  Tooltip,
-  XAxis,
-  CartesianGrid,
-} from "recharts";
-import { materialColors } from "../../utils/CSSColors";
-import { Chart } from "../../common/containers/Chart";
-import { Text } from "../../common/text/Text";
-import { useMemo } from "react";
+'use client';
+import { useMemo } from 'react';
+import { CartesianGrid, Legend, Line, LineChart, Tooltip, XAxis } from 'recharts';
+
+import { Chart } from '../../common/containers/Chart';
+import { Text } from '../../common/text/Text';
+import { materialColors } from '../../utils/CSSColors';
 
 interface LineChartProps {
   title?: string;
@@ -21,13 +15,13 @@ interface LineChartProps {
 }
 
 const lineColors = [
-  materialColors.green["300"],
-  materialColors.blue["300"],
-  materialColors.red["300"],
-  materialColors.indigo["300"],
-  materialColors.purple["300"],
-  materialColors.brown["300"],
-  materialColors.teal["300"],
+  materialColors.green['300'],
+  materialColors.blue['300'],
+  materialColors.red['300'],
+  materialColors.indigo['300'],
+  materialColors.purple['300'],
+  materialColors.brown['300'],
+  materialColors.teal['300'],
 ];
 
 export const LineChartComponent = (props: LineChartProps) => {
@@ -48,18 +42,18 @@ export const LineChartComponent = (props: LineChartProps) => {
   }, [dataFields]);
 
   return (
-    <Chart className={className || ""}>
+    <Chart className={className || ''}>
       <Text tag="h3" bold className="text-center">
-        {title || "Line Chart"}
+        {title || 'Line Chart'}
       </Text>
       <LineChart
         responsive
-        className={"w-full max-h-100 mx-auto text-[13px] font-bold"}
-        style={{ width: "100%", height: "100%" }}
+        className={'w-full max-h-100 mx-auto text-[13px] font-bold'}
+        style={{ width: '100%', height: '100%' }}
         data={data}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey={xField} stroke={materialColors.grey["500"]} />
+        <XAxis dataKey={xField} stroke={materialColors.grey['500']} />
         <Tooltip />
         {chartLines}
         <Legend height={24} iconSize={26} align="center" verticalAlign="top" />

@@ -1,9 +1,10 @@
-"use client";
-import { PieChart, Pie, Legend, Tooltip, Cell } from "recharts";
-import { materialColors } from "../../utils/CSSColors";
-import { Chart } from "../../common/containers/Chart";
-import { Text } from "../../common/text/Text";
-import { useMemo } from "react";
+'use client';
+import { useMemo } from 'react';
+import { Cell, Legend, Pie, PieChart, Tooltip } from 'recharts';
+
+import { Chart } from '../../common/containers/Chart';
+import { Text } from '../../common/text/Text';
+import { materialColors } from '../../utils/CSSColors';
 
 interface PieChartProps {
   title?: string;
@@ -14,13 +15,13 @@ interface PieChartProps {
 }
 
 const pieColors = [
-  materialColors.green["300"],
-  materialColors.blue["300"],
-  materialColors.red["300"],
-  materialColors.indigo["300"],
-  materialColors.purple["300"],
-  materialColors.brown["300"],
-  materialColors.teal["300"],
+  materialColors.green['300'],
+  materialColors.blue['300'],
+  materialColors.red['300'],
+  materialColors.indigo['300'],
+  materialColors.purple['300'],
+  materialColors.brown['300'],
+  materialColors.teal['300'],
 ];
 
 export const PieChartComponent = (props: PieChartProps) => {
@@ -28,28 +29,25 @@ export const PieChartComponent = (props: PieChartProps) => {
 
   const chartCells = useMemo(() => {
     return (data || []).map((_, index) => (
-      <Cell
-        key={`${nameField || "name"}-${index}`}
-        fill={pieColors[index % pieColors.length]}
-      />
+      <Cell key={`${nameField || 'name'}-${index}`} fill={pieColors[index % pieColors.length]} />
     ));
   }, [data, nameField]);
 
   return (
-    <Chart className={className || ""}>
+    <Chart className={className || ''}>
       <Text tag="h3" bold className="text-center">
-        {title || "Pie Chart"}
+        {title || 'Pie Chart'}
       </Text>
       <PieChart
         responsive
         className="w-full max-h-100 mx-auto text-[13px] font-bold"
-        style={{ width: "100%", height: "100%" }}
+        style={{ width: '100%', height: '100%' }}
       >
         <Tooltip />
         <Pie
           data={data}
-          dataKey={dataField || "value"}
-          nameKey={nameField || "name"}
+          dataKey={dataField || 'value'}
+          nameKey={nameField || 'name'}
           innerRadius="15%"
           outerRadius="80%"
           label

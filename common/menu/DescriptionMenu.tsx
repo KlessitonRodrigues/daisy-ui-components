@@ -1,13 +1,14 @@
-import { HTMLAttributes } from "react";
-import { twMerge } from "tailwind-merge";
-import { IconProps, Icons } from "../icons/IconMap";
-import { Text } from "../text/Text";
-import { Column } from "../containers/Flex";
-import Link from "next/link";
+import Link from 'next/link';
+import { HTMLAttributes } from 'react';
+import { twMerge } from 'tailwind-merge';
+
+import { Column } from '../containers/Flex';
+import { IconProps, Icons } from '../icons/IconMap';
+import { Text } from '../text/Text';
 
 export interface DescriptionMenuProps extends HTMLAttributes<HTMLUListElement> {
   items?: {
-    icon: IconProps["icon"];
+    icon: IconProps['icon'];
     label: string;
     description?: string;
     href?: string;
@@ -23,12 +24,10 @@ export const DescriptionMenu = (props: DescriptionMenuProps) => {
   return (
     <ul className={twMerge(...classNames)} {...menuProps}>
       {items?.map((item, index) => {
-        const activeItem = item.active
-          ? "bg-main text-white"
-          : "bg-bg1 text-fg1";
+        const activeItem = item.active ? 'bg-main text-white' : 'bg-bg1 text-fg1';
         return (
           <li key={index}>
-            <Link href={item.href || ""} onClick={item.onClick}>
+            <Link href={item.href || ''} onClick={item.onClick}>
               <div className={`border rounded-md p-2 w-10 ${activeItem}`}>
                 <Icons icon={item.icon} size="22" />
               </div>

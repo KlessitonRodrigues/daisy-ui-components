@@ -1,20 +1,19 @@
-import { twMerge } from "tailwind-merge";
-import { IconProps, Icons } from "../icons/IconMap";
-import { useMemo } from "react";
-import Link from "next/link";
-import If from "../containers/If";
-import { Row } from "../containers/Flex";
+import Link from 'next/link';
+import { useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
+
+import { Row } from '../containers/Flex';
+import If from '../containers/If';
+import { IconProps, Icons } from '../icons/IconMap';
 
 export interface BreadcumbsProps {
   className?: string;
-  items?: { label: string; icon?: IconProps["icon"]; href?: string }[];
+  items?: { label: string; icon?: IconProps['icon']; href?: string }[];
 }
 
 export const Breadcumbs = (props: BreadcumbsProps) => {
   const { className, items } = props;
-  const classNames = [
-    `breadcrumbs text-sm font-bold bg-bg1 px-4 py-2 rounded-md shadow-sm`,
-  ];
+  const classNames = [`breadcrumbs text-sm font-bold bg-bg1 px-4 py-2 rounded-md shadow-sm`];
 
   const itemList = useMemo(() => {
     return items?.map((item, index) => (
@@ -22,7 +21,7 @@ export const Breadcumbs = (props: BreadcumbsProps) => {
         <Icons icon={item.icon} size="22" />
         <If
           condition={!!item.href}
-          true={<Link href={item.href || ""}>{item.label}</Link>}
+          true={<Link href={item.href || ''}>{item.label}</Link>}
           false={<Row>{item.label}</Row>}
         />
       </li>

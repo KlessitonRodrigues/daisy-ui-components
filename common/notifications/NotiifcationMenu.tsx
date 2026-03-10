@@ -1,8 +1,9 @@
-import { useMemo } from "react";
-import { Button } from "../buttons/Button";
-import { Column, Row } from "../containers/Flex";
-import { Icons } from "../icons/IconMap";
-import { Text } from "../text/Text";
+import { useMemo } from 'react';
+
+import { Button } from '../buttons/Button';
+import { Column, Row } from '../containers/Flex';
+import { Icons } from '../icons/IconMap';
+import { Text } from '../text/Text';
 
 interface NotificationListProps {
   title?: string;
@@ -22,13 +23,13 @@ export const NotificationList = (props: NotificationListProps) => {
       return (
         <Row flexX="center">
           <Text bold fo="60">
-            {noNotificationsMessage || "No new notifications"}
+            {noNotificationsMessage || 'No new notifications'}
           </Text>
         </Row>
       );
     }
 
-    return notifications.map((notification) => (
+    return notifications.map(notification => (
       <Row key={notification.id} className={`border rounded-md p-4 bg-bg2`}>
         <Text fs="sm" className="w-full">
           {notification.message}
@@ -42,7 +43,7 @@ export const NotificationList = (props: NotificationListProps) => {
       <Row>
         <Icons icon="notification" size="22" />
         <Text bold fs="lg" className="w-full">
-          {title || "Notifications"}
+          {title || 'Notifications'}
         </Text>
         <Button ghost variant="square" size="sm" onClick={() => onRemove?.()}>
           <Icons icon="close" size="16" />

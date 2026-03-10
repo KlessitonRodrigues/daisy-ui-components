@@ -1,21 +1,22 @@
-"use client";
-import { useEffect, useMemo, useState } from "react";
-import { twMerge } from "tailwind-merge";
-import { IconProps, Icons } from "../icons/IconMap";
+'use client';
+import { useEffect, useMemo, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
+
+import { IconProps, Icons } from '../icons/IconMap';
 
 export type TabListProps = {
   className?: string;
   defaultItem?: number;
   items: {
     label: string;
-    icon: IconProps["icon"];
+    icon: IconProps['icon'];
     content: React.ReactNode;
     disabled?: boolean;
-    color?: "main" | "blue" | "red" | "green";
-    responsive?: "sm" | "md" | "lg";
+    color?: 'main' | 'blue' | 'red' | 'green';
+    responsive?: 'sm' | 'md' | 'lg';
     value?: string;
   }[];
-  onSelect?: (item: TabListProps["items"][number], index: number) => void;
+  onSelect?: (item: TabListProps['items'][number], index: number) => void;
 };
 
 export const TabList = (props: TabListProps) => {
@@ -33,17 +34,17 @@ export const TabList = (props: TabListProps) => {
 
   const tabOptions = useMemo(() => {
     return items.map((item, index) => {
-      const classNames = ["tab tabs-lg text-xs text-fg1 gap-1 hover:bg-bg2"];
-      if (tabIndex === index) classNames.push("tab-active");
-      if (item.disabled) classNames.push("tab-disabled");
+      const classNames = ['tab tabs-lg text-xs text-fg1 gap-1 hover:bg-bg2'];
+      if (tabIndex === index) classNames.push('tab-active');
+      if (item.disabled) classNames.push('tab-disabled');
       if (item.color) classNames.push(`text-${item.color}`);
-      if (item.responsive) classNames.push("hidden", `${item.responsive}:flex`);
+      if (item.responsive) classNames.push('hidden', `${item.responsive}:flex`);
 
       return (
         <a
           role="tab"
           key={index}
-          className={classNames.join(" ")}
+          className={classNames.join(' ')}
           onClick={() => onSelectItem(index)}
         >
           {item.icon && <Icons icon={item.icon} size="16" />}
@@ -54,7 +55,7 @@ export const TabList = (props: TabListProps) => {
   }, [items, tabIndex]);
 
   return (
-    <div className={twMerge("w-full", className)} {...tabListProps}>
+    <div className={twMerge('w-full', className)} {...tabListProps}>
       <div role="tablist" className="tabs tabs-lift">
         {tabOptions}
         <div className="flex-1 border-b" />

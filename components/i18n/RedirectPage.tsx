@@ -1,8 +1,9 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
-import { getDefaultLanguage } from "../../utils/html";
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation';
+import { useEffect } from 'react';
+
+import { getDefaultLanguage } from '../../utils/html';
 
 export const RedirectPage = () => {
   useEffect(() => {

@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @plugin "daisyui" {
   themes: light --default;
@@ -153,7 +153,7 @@ textarea.hide-caret {
 /* Skeleton */
 /* Add data-loading to any element to show a skeleton shimmer.
    Example: <div data-loading={isLoading}>...</div> */
-[data-loading][data-loading="true"] {
+[data-loading][data-loading='true'] {
   position: relative;
   overflow: hidden;
   user-select: none;
@@ -168,7 +168,7 @@ textarea.hide-caret {
   animation: skeleton-shimmer 1.5s linear infinite;
 }
 
-[data-loading][data-loading="true"] * {
+[data-loading][data-loading='true'] * {
   opacity: 0.5;
 }
 
