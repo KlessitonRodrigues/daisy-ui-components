@@ -1,4 +1,3 @@
-import { HTMLAttributes } from 'react';
 import {
   PiArrowDownBold,
   PiArrowUpBold,
@@ -15,6 +14,7 @@ import {
   PiChartScatterBold,
   PiCheckBold,
   PiDotsThreeOutlineVerticalFill,
+  PiEmptyBold,
   PiEnvelopeSimpleBold,
   PiExclamationMarkBold,
   PiEyeBold,
@@ -37,12 +37,10 @@ import {
   PiQuestionMarkBold,
   PiSignInBold,
   PiSignOutBold,
-  PiTableBold,
   PiUserBold,
   PiUserPlus,
   PiXBold,
 } from 'react-icons/pi';
-import { twMerge } from 'tailwind-merge';
 
 export const IconMap = {
   signIn: <PiSignInBold size={'100%'} />,
@@ -88,26 +86,26 @@ export const IconMap = {
   upArrow: <PiArrowUpBold size={'100%'} />,
   downArrow: <PiArrowDownBold size={'100%'} />,
   list: <PiListBold size={'100%'} />,
+  noType: <PiEmptyBold size={'100%'} />,
 };
 
-export interface IconProps extends HTMLAttributes<HTMLDivElement> {
-  icon?: keyof typeof IconMap;
-  size?: '16' | '22' | '28' | '34';
+export interface IconProps {
+  className?: string;
+  iconType?: keyof typeof IconMap;
+  iconSize?: '1rem' | '1.2rem' | '1.4rem' | '1.6rem' | '1.8rem' | '2rem';
 }
 
 export const Icons = (props: IconProps) => {
-  const { className, icon, size, children, ...iconProps } = props;
-  const classNames = ['icon block'];
-  classNames.push(`w-[${size || '22'}px]`);
-  classNames.push(className || '');
+  const { className = '', iconSize = '1.4rem', iconType } = props;
+  const currentIcon = IconMap[iconType || 'noType'];
 
   return (
-    <span className={twMerge(...classNames)} {...iconProps}>
-      {icon && IconMap[icon]}
+    <span className={`icon block ${className}`} style={{ width: iconSize, height: iconSize }}>
+      {currentIcon}
     </span>
   );
 };
 
 /* Tailwind include
-    w-[16px] w-[22px] w-[28px] w-[34px]
+    w-[1rem] w-[1.2rem] w-[1.4rem] w-[1.6rem] w-[1.8rem] w-[2rem]
 */

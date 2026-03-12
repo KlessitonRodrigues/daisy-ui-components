@@ -20,7 +20,7 @@ export const Pagination = (props: PaginationProps) => {
         onClick={() => onPageChange?.(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        <Icons icon="caretLeft" size="16" />
+        <Icons iconType="caretLeft" iconSize="1.2rem" />
       </Button>
       <Button size="sm" color="primary">
         <Text bold>{currentPage}</Text>
@@ -31,7 +31,7 @@ export const Pagination = (props: PaginationProps) => {
         onClick={() => onPageChange?.(currentPage + 1)}
         disabled={currentPage === lastPage}
       >
-        <Icons icon="caretRight" size="16" />
+        <Icons iconType="caretRight" iconSize="1.2rem" />
       </Button>
       <Button
         ghost
@@ -39,7 +39,7 @@ export const Pagination = (props: PaginationProps) => {
         onClick={() => onPageChange?.(currentPage + 5)}
         disabled={currentPage + 5 > lastPage}
       >
-        <Icons icon="skipRight" size="16" />
+        <Icons iconType="skipRight" iconSize="1.2rem" />
       </Button>
       <Button
         ghost
@@ -47,7 +47,7 @@ export const Pagination = (props: PaginationProps) => {
         onClick={() => onPageChange?.(lastPage)}
         disabled={currentPage === lastPage}
       >
-        <Icons icon="caretLineRight" size="16" />
+        <Icons iconType="caretLineRight" iconSize="1.2rem" />
       </Button>
     </Row>
   );

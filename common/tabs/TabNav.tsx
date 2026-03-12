@@ -9,10 +9,9 @@ export type TabListProps = {
   defaultItem?: number;
   items: {
     label: string;
-    icon: IconProps['icon'];
+    icon: IconProps['iconType'];
     content: React.ReactNode;
     disabled?: boolean;
-    color?: 'main' | 'blue' | 'red' | 'green';
     responsive?: 'sm' | 'md' | 'lg';
     value?: string;
   }[];
@@ -35,19 +34,18 @@ export const TabList = (props: TabListProps) => {
   const tabOptions = useMemo(() => {
     return items.map((item, index) => {
       const classNames = ['tab tabs-lg text-xs text-fg1 gap-1 hover:bg-bg2'];
-      if (tabIndex === index) classNames.push('tab-active');
+      if (tabIndex === index) classNames.push('tab-active text-primary');
       if (item.disabled) classNames.push('tab-disabled');
-      if (item.color) classNames.push(`text-${item.color}`);
       if (item.responsive) classNames.push('hidden', `${item.responsive}:flex`);
 
       return (
         <a
           role="tab"
           key={index}
-          className={classNames.join(' ')}
+          className={twMerge(classNames.join(' '))}
           onClick={() => onSelectItem(index)}
         >
-          {item.icon && <Icons icon={item.icon} size="16" />}
+          {item.icon && <Icons iconType={item.icon} iconSize="1.2rem" />}
           {item.label}
         </a>
       );

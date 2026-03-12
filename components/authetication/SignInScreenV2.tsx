@@ -1,4 +1,4 @@
-import { Column, Row } from '../../common/containers/Flex';
+import { Column } from '../../common/containers/Flex';
 import { Text } from '../../common/text/Text';
 
 interface SignInScreenV2Props {
@@ -29,11 +29,11 @@ export const SignInScreenV2 = (props: SignInScreenV2Props) => {
         <div className="w-full h-150 lg:h-auto p-8 bg-no-repeat bg-cover text-white relative">
           <div className="absolute inset-0 bg-no-repeat bg-center bg-cover" style={sectionImg} />
           <div className="relative z-10 h-full">
-            <Column flexY="center" className="max-w-xl m-auto text-center" gap={8}>
-              <Text tag="h1" bold fs="5xl">
+            <Column flexY="center" className="max-w-2xl m-auto pb-20 text-center" gap={8}>
+              <Text tag="h1" bold className="text-[3.5rem]">
                 {data.title}
               </Text>
-              <Text fs="lg">{data.description}</Text>
+              <Text size="lg">{data.description}</Text>
             </Column>
           </div>
         </div>

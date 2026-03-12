@@ -1,16 +1,29 @@
-import { twMerge } from 'tailwind-merge';
-
-type IText = React.HTMLAttributes<HTMLParagraphElement> & {
+interface ITextProps {
   bold?: boolean;
+  centered?: boolean;
   inline?: boolean;
   className?: string;
-  fc?: 'blue' | 'red' | 'green' | 'yellow' | 'black' | 'gray' | 'white';
-  fs?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
-  fo?: '10' | '20' | '30' | '40' | '50' | '60' | '70' | '80' | '90' | '100';
-  tag?: 'p' | 'b' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'span';
-};
+  color?: 'main' | 'blue' | 'red' | 'green' | 'yellow' | 'black' | 'gray' | 'white';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl';
+  opacity?: '10' | '20' | '30' | '40' | '50' | '60' | '70' | '80' | '90' | '100';
+  tag?:
+    | 'p'
+    | 'b'
+    | 'h1'
+    | 'h2'
+    | 'h3'
+    | 'h4'
+    | 'h5'
+    | 'h6'
+    | 'span'
+    | 'small'
+    | 'strong'
+    | 'mark'
+    | 'em';
+  children: React.ReactNode;
+}
 
-const TagMap = (props: IText) => {
+const TagMap = (props: ITextProps) => {
   const { tag, className, children } = props;
   const tagProps = { className, children };
   if (tag === 'p') return <p {...tagProps} />;
@@ -29,21 +42,24 @@ const TagMap = (props: IText) => {
   return <p {...tagProps} />;
 };
 
-export const Text = (props: IText) => {
-  const { bold, fc, fs, fo, className = '' } = props;
-  const textStyle = [];
+export const Text = (props: ITextProps) => {
+  const { bold, centered, color, size, opacity, inline, className = '' } = props;
+  const textStyle: string[] = [];
   if (bold) textStyle.push('font-bold');
-  if (fc) textStyle.push(`text-${fc}`);
-  if (fs) textStyle.push(`text-${fs}`);
-  if (fo) textStyle.push(`opacity-${fo}`);
-  if (props.inline) textStyle.push('inline');
+  if (centered) textStyle.push('text-center');
+  if (color) textStyle.push(`text-${color}`);
+  if (size) textStyle.push(`text-${size}`);
+  if (opacity) textStyle.push(`opacity-${opacity}`);
+  if (inline) textStyle.push('inline');
   if (className) textStyle.push(className);
-  return <TagMap {...props} className={twMerge(`${textStyle.join(' ')}`)} />;
+  return <TagMap {...props} className={textStyle.join(' ')} />;
 };
 
 /* tailwind include
     font-bold font-normal
     text-xs text-sm text-md text-lg text-xl text-2xl text-3xl text-4xl text-5xl
-    text-blue text-red text-green text-yellow text-black text-gray text-white
+    text-main text-blue text-red text-green text-yellow text-black text-gray text-white
     opacity-10 opacity-20 opacity-30 opacity-40 opacity-50 opacity-60 opacity-70 opacity-80 opacity-90 opacity-100
+    text-center
+    inline
 */

@@ -16,7 +16,7 @@ export const Switch = (props: SwitchProps) => {
 
   return (
     <Row>
-      <Text fs="sm">{label}</Text>
+      <Text size="sm">{label}</Text>
       {beforeElement}
       <label className="toggle toggle-md border">
         <input
@@ -24,8 +24,8 @@ export const Switch = (props: SwitchProps) => {
           defaultChecked={checked}
           onChange={e => onChange?.(e.target.checked)}
         />
-        <Icons icon="close" size="16" aria-label="enabled" />
-        <Icons icon="checkMark" size="16" aria-label="disabled" />
+        <Icons iconType="close" iconSize="1rem" aria-label="enabled" />
+        <Icons iconType="checkMark" iconSize="1rem" aria-label="disabled" />
       </label>
       {afterElement}
     </Row>

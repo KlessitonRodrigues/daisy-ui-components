@@ -58,7 +58,7 @@ export const NavBar = (props: NavBarProps) => {
 
   return (
     <div className="w-full sticky top-0 z-40" onMouseLeave={closeMenus}>
-      <nav className="navbar z-30 shadow-sm bg-main text-white">
+      <nav className="navbar z-30 shadow-sm bg-main text-white rounded-b-sm">
         <Row gap={4}>
           <Button
             ghost
@@ -70,14 +70,14 @@ export const NavBar = (props: NavBarProps) => {
           >
             <If
               condition={!menuOpen}
-              true={<Icons icon="menu" size="28" />}
-              false={<Icons icon="close" size="28" />}
+              true={<Icons iconType="menu" iconSize="2rem" />}
+              false={<Icons iconType="close" iconSize="2rem" />}
             />
           </Button>
 
           <Row flexY="center">
-            <Icons icon="chart" size="28" />
-            <Text fs="xl" bold>
+            <Icons iconType="chart" iconSize="2rem" />
+            <Text size="xl" bold>
               {title || 'Application'}
             </Text>
           </Row>
@@ -92,7 +92,7 @@ export const NavBar = (props: NavBarProps) => {
                 onClick={() => handleNotifications()}
                 onMouseEnter={() => handleNotifications(true)}
               >
-                <Icons icon="notification" size="22" />
+                <Icons iconType="notification" iconSize="1.6rem" />
               </Button>
             </Badge>
             <Button

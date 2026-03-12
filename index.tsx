@@ -4,6 +4,7 @@ export * from './common/containers/If';
 export * from './common/containers/Page';
 export * from './common/text/Text';
 export * from './common/buttons/Button';
+export * from './common/buttons/IconButton';
 export * from './common/cards/Card';
 export * from './common/tabs/TabNav';
 export * from './common/inputs/InputField';

@@ -18,7 +18,7 @@ export const LoadScreen = (props: LoadScreenProps) => {
     >
       <div className="m-auto flex gap-4 items-center justify-center h-full">
         <span className="loading loading-bars loading-xl text-white" />
-        <Text fs="4xl" bold className="text-white">
+        <Text size="4xl" bold className="text-white">
           {props.title}
         </Text>
         {children}

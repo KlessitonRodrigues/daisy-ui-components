@@ -8,7 +8,7 @@ import { IconProps, Icons } from '../icons/IconMap';
 
 export interface BreadcumbsProps {
   className?: string;
-  items?: { label: string; icon?: IconProps['icon']; href?: string }[];
+  items?: { label: string; icon?: IconProps['iconType']; href?: string }[];
 }
 
 export const Breadcumbs = (props: BreadcumbsProps) => {
@@ -18,7 +18,7 @@ export const Breadcumbs = (props: BreadcumbsProps) => {
   const itemList = useMemo(() => {
     return items?.map((item, index) => (
       <li key={index} className="flex gap-2">
-        <Icons icon={item.icon} size="22" />
+        <Icons iconType={item.icon} />
         <If
           condition={!!item.href}
           true={<Link href={item.href || ''}>{item.label}</Link>}

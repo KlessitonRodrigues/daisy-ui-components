@@ -8,7 +8,7 @@ import { Text } from '../text/Text';
 
 export interface DescriptionMenuProps extends HTMLAttributes<HTMLUListElement> {
   items?: {
-    icon: IconProps['icon'];
+    icon: IconProps['iconType'];
     label: string;
     description?: string;
     href?: string;
@@ -29,13 +29,13 @@ export const DescriptionMenu = (props: DescriptionMenuProps) => {
           <li key={index}>
             <Link href={item.href || ''} onClick={item.onClick}>
               <div className={`border rounded-md p-2 w-10 ${activeItem}`}>
-                <Icons icon={item.icon} size="22" />
+                <Icons iconType={item.icon} />
               </div>
               <Column flexX="start" gap={0}>
-                <Text fs="lg" bold className="text-main">
+                <Text size="lg" bold className="text-main">
                   {item.label}
                 </Text>
-                <Text tag="p" fs="sm" fo="70">
+                <Text tag="p" size="sm" opacity="70">
                   {item.description}
                 </Text>
               </Column>

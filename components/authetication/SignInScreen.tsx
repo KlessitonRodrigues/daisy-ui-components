@@ -29,13 +29,13 @@ export const SignInScreen = (props: SignInScreenProps) => {
         <div className="w-full h-150 lg:h-auto p-8 bg-no-repeat bg-cover text-white relative">
           <div className="absolute inset-0 bg-no-repeat bg-center bg-cover" style={sectionImg} />
           <div className="relative z-10 space-y-8">
-            <Text tag="h1" fs="4xl" bold className="slide-up">
+            <Text tag="h1" size="4xl" bold className="slide-up">
               {data.title}
             </Text>
-            <Text tag="p" fs="xl" className="slide-up-delay-500">
+            <Text tag="p" size="xl" className="slide-up-delay-500">
               {data.description}
             </Text>
-            <Text tag="p" fs="xl" className="slide-up-delay-1000">
+            <Text tag="p" size="xl" className="slide-up-delay-1000">
               {data.description2}
             </Text>
           </div>

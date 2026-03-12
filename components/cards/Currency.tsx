@@ -16,16 +16,16 @@ export const CurrencyCard = (props: CurrencyCardProps) => {
   return (
     <Card className="w-full lg:max-w-70">
       <Row flexX="between">
-        <Text bold fo="70">
+        <Text bold opacity="70">
           {total}
         </Text>
-        <Text bold fo="70" className={percentageClassName || 'text-green'}>
+        <Text bold opacity="70" className={percentageClassName || 'text-green'}>
           + {percentage}%
         </Text>
       </Row>
       <Row flexX="between" className="mt-4">
-        <Icons icon="chart" size="34" />
-        <Text bold fo="70" fs="3xl" className="text-blue">
+        <Icons iconType="chart" iconSize="2rem" />
+        <Text bold opacity="70" size="3xl" className="text-blue">
           {amount}
         </Text>
       </Row>

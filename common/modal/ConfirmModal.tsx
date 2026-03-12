@@ -30,7 +30,7 @@ export const ConfirmModal = (props: ConfirmModalProps) => {
       {children}
       <dialog className="modal" open={isOpen}>
         <div className="modal-box w-80 space-y-8">
-          <Text bold fs="lg" className="text-center">
+          <Text bold size="lg" className="text-center">
             {message}
           </Text>
           <Row flexX="between">

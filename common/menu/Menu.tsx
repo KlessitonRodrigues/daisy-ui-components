@@ -7,7 +7,7 @@ import { Text } from '../text/Text';
 
 export interface MenuProps extends HTMLAttributes<HTMLUListElement> {
   items?: {
-    icon: IconProps['icon'];
+    icon: IconProps['iconType'];
     label: string;
     href?: string;
     active?: boolean;
@@ -25,7 +25,7 @@ export const Menu = (props: MenuProps) => {
         <li key={index}>
           <Link href={item.href || ''} onClick={item.onClick}>
             <div className="w-8 h-8 border rounded-md p-1">
-              <Icons icon={item.icon} size="22" className="mr-2" />
+              <Icons iconType={item.icon} className="mr-2" />
             </div>
             <Text bold>{item.label}</Text>
           </Link>

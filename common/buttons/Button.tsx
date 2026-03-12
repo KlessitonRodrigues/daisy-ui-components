@@ -1,7 +1,5 @@
 import { twMerge } from 'tailwind-merge';
 
-import { IconProps, Icons } from '../icons/IconMap';
-
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   label?: string;
   onClick?: () => void;
@@ -32,16 +30,6 @@ export const Button = (props: ButtonProps) => {
       {loading && <span className="loading loading-spinner loading-xs" />}
       {props.label || props.children}
     </button>
-  );
-};
-
-export const IconButton = (props: IconProps & ButtonProps) => {
-  const { children, ...btnProps } = props;
-  return (
-    <Button {...btnProps}>
-      <Icons icon={props.icon} size={props.size || '22'} />
-      {children}
-    </Button>
   );
 };
 

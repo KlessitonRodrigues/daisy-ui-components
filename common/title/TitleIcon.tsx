@@ -4,7 +4,7 @@ import { IconProps, Icons } from '../icons/IconMap';
 
 interface TitleIconProps {
   title?: string;
-  icon?: IconProps['icon'];
+  icon?: IconProps['iconType'];
 }
 
 export const TitleIcon = (props: TitleIconProps) => {
@@ -12,8 +12,8 @@ export const TitleIcon = (props: TitleIconProps) => {
 
   return (
     <Row className="border-b pb-2">
-      <Icons icon={icon} size="22" />
-      <Text bold fo="60">
+      <Icons iconType={icon} iconSize="1.2rem" />
+      <Text bold opacity="60">
         {title}
       </Text>
     </Row>

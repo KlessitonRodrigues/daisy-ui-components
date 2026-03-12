@@ -10,7 +10,7 @@ export const DataDisplay = (props: IDataDisplay) => {
   const { label, value, ...rest } = props;
   return (
     <Column flexX="start" gap={0} {...rest}>
-      <Text bold fs="sm" fo="80" className="text-main">
+      <Text bold size="sm" opacity="80" className="text-main">
         {label}
       </Text>
       <Text>{value || ''}</Text>
