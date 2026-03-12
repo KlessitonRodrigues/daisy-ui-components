@@ -37,6 +37,7 @@ import {
   PiQuestionMarkBold,
   PiSignInBold,
   PiSignOutBold,
+  PiTrashBold,
   PiUserBold,
   PiUserPlus,
   PiXBold,
@@ -86,6 +87,7 @@ export const IconMap = {
   upArrow: <PiArrowUpBold size={'100%'} />,
   downArrow: <PiArrowDownBold size={'100%'} />,
   list: <PiListBold size={'100%'} />,
+  trash: <PiTrashBold size={'100%'} />,
   noType: <PiEmptyBold size={'100%'} />,
 };
 

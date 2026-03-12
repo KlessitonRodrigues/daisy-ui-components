@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { Badge } from '../../common/badge/Bagde';
 import { Button } from '../../common/buttons/Button';
 import { Row } from '../../common/containers/Flex';
-import If from '../../common/containers/If';
 import { Icons } from '../../common/icons/IconMap';
+import { SwapElements } from '../../common/swap/SwapElements';
 import { Text } from '../../common/text/Text';
 import { UserInitials } from '../users/UserInitials';
 
@@ -68,15 +68,16 @@ export const NavBar = (props: NavBarProps) => {
             onClick={() => handleSideBar()}
             onMouseEnter={() => handleSideBar(true)}
           >
-            <If
-              condition={!menuOpen}
-              true={<Icons iconType="menu" iconSize="2rem" />}
-              false={<Icons iconType="close" iconSize="2rem" />}
+            <SwapElements
+              active={!menuOpen}
+              swapEffect="flip"
+              offElement={<Icons iconType="menu" iconSize="2rem" />}
+              onElement={<Icons iconType="close" iconSize="2rem" />}
             />
           </Button>
 
           <Row flexY="center">
-            <Icons iconType="chart" iconSize="2rem" />
+            <Icons iconType="chart" iconSize="1.8rem" />
             <Text size="xl" bold>
               {title || 'Application'}
             </Text>

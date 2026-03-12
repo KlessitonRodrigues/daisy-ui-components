@@ -30,6 +30,7 @@ export * from './common/notifications/NotiifcationMenu';
 export * from './common/badge/Bagde';
 export * from './common/selector/Selector';
 export * from './common/modal/ConfirmModal';
+export * from './common/swap/SwapElements';
 
 // Components
 export * from './components/authetication/SignInScreen';
