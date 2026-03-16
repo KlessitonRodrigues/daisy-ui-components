@@ -30,22 +30,22 @@ export const NavBar = (props: NavBarProps) => {
   } = props;
   const [menuOpen, setMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
-  const [notificationsOpen, setNotificationsOpen] = useState(false);
+  const [notifyMenuOpen, setNotifyMenuOpen] = useState(false);
 
   const handleSideBar = (to?: boolean) => {
     setMenuOpen(to ?? !menuOpen);
     setUserMenuOpen(false);
-    setNotificationsOpen(false);
+    setNotifyMenuOpen(false);
   };
 
   const handleUserMenu = (to?: boolean) => {
     setUserMenuOpen(to ?? !userMenuOpen);
     setMenuOpen(false);
-    setNotificationsOpen(false);
+    setNotifyMenuOpen(false);
   };
 
   const handleNotifications = (to?: boolean) => {
-    setNotificationsOpen(to ?? !notificationsOpen);
+    setNotifyMenuOpen(to ?? !notifyMenuOpen);
     setMenuOpen(false);
     setUserMenuOpen(false);
   };
@@ -53,7 +53,7 @@ export const NavBar = (props: NavBarProps) => {
   const closeMenus = () => {
     setMenuOpen(false);
     setUserMenuOpen(false);
-    setNotificationsOpen(false);
+    setNotifyMenuOpen(false);
   };
 
   return (
@@ -69,8 +69,8 @@ export const NavBar = (props: NavBarProps) => {
             onMouseEnter={() => handleSideBar(true)}
           >
             <SwapElements
+              swapEffect="rotate"
               active={!menuOpen}
-              swapEffect="flip"
               offElement={<Icons iconType="menu" iconSize="2rem" />}
               onElement={<Icons iconType="close" iconSize="2rem" />}
             />
@@ -119,7 +119,7 @@ export const NavBar = (props: NavBarProps) => {
 
       <div
         className="absolute max-w-md right-0 top-full z-10 overflow-hidden fade-down shadow-md transition"
-        style={{ width: notificationsOpen ? '100%' : '0' }}
+        style={{ width: notifyMenuOpen ? '100%' : '0' }}
       >
         <div className="min-w-md h-full">{notificationsComponent}</div>
       </div>

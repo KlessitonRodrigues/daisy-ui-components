@@ -45,6 +45,9 @@ export * from './components/users/UserInitials';
 export * from './components/navbars/FixedTopNavbar';
 export * from './components/i18n/RedirectPage';
 
+// Hooks
+export * from './hooks/useBooleanState';
+
 // Utils
 export * from './utils/CSSColors';
 export * from './utils/html';
