@@ -1,4 +1,4 @@
-import { Column } from '../../common/containers/Flex';
+import { Column, Row } from '../../common/containers/Flex';
 import { Text } from '../../common/text/Text';
 
 interface SignInScreenV2Props {

@@ -7,3 +7,7 @@ export const formatStr = (str: string, template: string) => {
   }
   return newStr.join('');
 };
+
+export const toCss = (value: any, str: string, str2?: string) => {
+  return value ? str : str2 || '';
+};
