@@ -85,7 +85,6 @@
 
 * {
   scrollbar-color: var(--color-default-gray) var(--color-bg4);
-  scrollbar-width: thin;
   scroll-behavior: smooth;
 }
 

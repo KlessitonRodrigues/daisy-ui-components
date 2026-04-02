@@ -35,6 +35,7 @@ export * from './common/swap/SwapElements';
 // Components
 export * from './components/authetication/SignInScreen';
 export * from './components/authetication/SignInScreenV2';
+export * from './components/authetication/SignInCarouselScreen';
 export * from './components/charts/BarChart';
 export * from './components/charts/LineChart';
 export * from './components/charts/PieChart';
