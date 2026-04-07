@@ -3,6 +3,18 @@ export const getBrowserWindow = () => {
   return window;
 };
 
+export const getFromStorage = (key: string) => {
+  const window = getBrowserWindow();
+  if (!window) return '';
+  return window.localStorage.getItem(key);
+};
+
+export const setToStorage = (key: string, value: string) => {
+  const window = getBrowserWindow();
+  if (!window) return '';
+  window.localStorage.setItem(key, value);
+};
+
 export const isDarkTheme = () => {
   const window = getBrowserWindow();
   if (!window) return false;
@@ -21,16 +33,12 @@ export const setTheme = (theme: 'light' | 'dark') => {
   else body.classList.remove('light');
 };
 
-export const getFromStorage = (key: string) => {
+export const getDefaultTheme = () => {
   const window = getBrowserWindow();
-  if (!window) return '';
-  return window.localStorage.getItem(key);
-};
-
-export const setToStorage = (key: string, value: string) => {
-  const window = getBrowserWindow();
-  if (!window) return '';
-  window.localStorage.setItem(key, value);
+  if (!window) return 'light';
+  const storedTheme = getFromStorage('theme');
+  if (storedTheme) return storedTheme as 'light' | 'dark';
+  return 'light';
 };
 
 export const getDefaultLanguage = () => {

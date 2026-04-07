@@ -5,11 +5,9 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {}
 
 export const Card = (props: CardProps) => {
   const { className, children, ...cardProps } = props;
-  const classNames = ['card bg-bg1 border rounded-sm p-4'];
-  classNames.push(className || '');
 
   return (
-    <div className={twMerge(...classNames)} {...cardProps}>
+    <div className={twMerge('w-full card bg-bg1 border rounded-sm p-4', className)} {...cardProps}>
       {children}
     </div>
   );

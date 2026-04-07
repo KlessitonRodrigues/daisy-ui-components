@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Badge } from '../../common/badge/Bagde';
 import { Button } from '../../common/buttons/Button';
 import { Row } from '../../common/containers/Flex';
+import If from '../../common/containers/If';
 import { Icons } from '../../common/icons/IconMap';
 import { SwapElements } from '../../common/swap/SwapElements';
 import { Text } from '../../common/text/Text';
@@ -58,55 +59,59 @@ export const NavBar = (props: NavBarProps) => {
 
   return (
     <div className="w-full sticky top-0 z-40" onMouseLeave={closeMenus}>
-      <nav className="navbar z-30 shadow-sm bg-main text-white rounded-b-sm">
+      <nav className="navbar p-4 z-30 shadow-sm bg-main text-white rounded-b-sm">
         <Row gap={4}>
-          <Button
-            ghost
-            variant="square"
-            size="lg"
-            className="transition"
-            onClick={() => handleSideBar()}
-            onMouseEnter={() => handleSideBar(true)}
-          >
-            <SwapElements
-              swapEffect="rotate"
-              active={!menuOpen}
-              offElement={<Icons iconType="menu" iconSize="2rem" />}
-              onElement={<Icons iconType="close" iconSize="2rem" />}
-            />
-          </Button>
-
-          <Row flexY="center">
-            <Icons iconType="chart" iconSize="1.8rem" />
-            <Text size="xl" bold>
-              {title || 'Application'}
-            </Text>
-          </Row>
-
-          <Row flexY="center" className="w-fit px-2" gap={4}>
-            <Badge content={userNotifications || 0}>
-              <Button
-                ghost
-                variant="square"
-                size="md"
-                className="transition"
-                onClick={() => handleNotifications()}
-                onMouseEnter={() => handleNotifications(true)}
-              >
-                <Icons iconType="notification" iconSize="1.6rem" />
-              </Button>
-            </Badge>
+          <If condition={!!sidebarComponent}>
             <Button
               ghost
               variant="square"
               size="lg"
               className="transition"
-              onClick={() => handleUserMenu()}
-              onMouseEnter={() => handleUserMenu(true)}
+              onClick={() => handleSideBar()}
+              onMouseEnter={() => handleSideBar(true)}
             >
-              <UserInitials name={userName || 'User Name'} />
+              <SwapElements
+                swapEffect="rotate"
+                active={!menuOpen}
+                offElement={<Icons iconType="menu" iconSize="2rem" />}
+                onElement={<Icons iconType="close" iconSize="2rem" />}
+              />
             </Button>
+          </If>
+
+          <Row flexY="center">
+            <Icons iconType="brush" iconSize="1.8rem" />
+            <Text size="xl" bold>
+              {title || 'Application'}
+            </Text>
           </Row>
+
+          <If condition={!!(userMenuComponent || notificationsComponent)}>
+            <Row flexY="center" className="w-fit px-2" gap={4}>
+              <Badge content={userNotifications || 0}>
+                <Button
+                  ghost
+                  variant="square"
+                  size="md"
+                  className="transition"
+                  onClick={() => handleNotifications()}
+                  onMouseEnter={() => handleNotifications(true)}
+                >
+                  <Icons iconType="notification" iconSize="1.6rem" />
+                </Button>
+              </Badge>
+              <Button
+                ghost
+                variant="square"
+                size="lg"
+                className="transition"
+                onClick={() => handleUserMenu()}
+                onMouseEnter={() => handleUserMenu(true)}
+              >
+                <UserInitials name={userName || 'User Name'} />
+              </Button>
+            </Row>
+          </If>
         </Row>
       </nav>
 
