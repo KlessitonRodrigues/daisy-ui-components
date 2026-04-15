@@ -1,19 +1,42 @@
-import { Column } from '../containers/Flex';
+import { Column, Row } from '../containers/Flex';
 import { Text } from '../text/Text';
 
-type IDataDisplay = React.HTMLAttributes<HTMLDivElement> & {
+type IDataDisplay = {
+  className?: string;
+  direction?: 'row' | 'column';
   label?: string;
+  labelWidth?: number | string;
+  labelSize?: 'xs' | 'sm' | 'md' | 'lg';
   value?: string;
 };
 
 export const DataDisplay = (props: IDataDisplay) => {
-  const { label, value, ...rest } = props;
+  const {
+    label,
+    value,
+    className,
+    direction = 'column',
+    labelWidth = '',
+    labelSize = 'md',
+  } = props;
+
+  if (direction === 'row') {
+    return (
+      <Row flexY="start" gap={2} className={className}>
+        <Text opacity="60" size={labelSize} style={{ width: labelWidth }}>
+          {label}
+        </Text>
+        <Text bold>{value || ''}</Text>
+      </Row>
+    );
+  }
+
   return (
-    <Column flexX="start" gap={0} {...rest}>
-      <Text bold size="sm" opacity="80" className="text-main">
+    <Column flexX="start" gap={0} className={className}>
+      <Text opacity="60" size={labelSize} style={{ width: labelWidth }}>
         {label}
       </Text>
-      <Text>{value || ''}</Text>
+      <Text bold>{value || ''}</Text>
     </Column>
   );
 };

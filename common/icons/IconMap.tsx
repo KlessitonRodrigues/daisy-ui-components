@@ -1,7 +1,9 @@
 import {
+  PiArrowClockwiseBold,
   PiArrowDownBold,
   PiArrowUpBold,
   PiBellBold,
+  PiBluetoothBold,
   PiCalendar,
   PiCaretDoubleLeftBold,
   PiCaretDoubleRightBold,
@@ -13,6 +15,7 @@ import {
   PiChartLineBold,
   PiChartScatterBold,
   PiCheckBold,
+  PiCreditCard,
   PiDotsThreeOutlineVerticalFill,
   PiEmptyBold,
   PiEnvelopeSimpleBold,
@@ -28,6 +31,7 @@ import {
   PiMagnifyingGlassBold,
   PiMailbox,
   PiMailboxBold,
+  PiMapPinBold,
   PiMoneyBold,
   PiNumpadBold,
   PiPaintBrushBold,
@@ -40,6 +44,7 @@ import {
   PiTrashBold,
   PiUserBold,
   PiUserPlus,
+  PiVibrateBold,
   PiXBold,
 } from 'react-icons/pi';
 
@@ -89,6 +94,11 @@ export const IconMap = {
   list: <PiListBold size={'100%'} />,
   trash: <PiTrashBold size={'100%'} />,
   noType: <PiEmptyBold size={'100%'} />,
+  reload: <PiArrowClockwiseBold size={'100%'} />,
+  map: <PiMapPinBold size={'100%'} />,
+  bluetooth: <PiBluetoothBold size={'100%'} />,
+  vibrate: <PiVibrateBold size={'100%'} />,
+  paymentCard: <PiCreditCard size={'100%'} />,
 };
 
 export interface IconProps {

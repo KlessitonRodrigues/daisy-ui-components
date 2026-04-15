@@ -21,11 +21,12 @@ interface ITextProps {
     | 'mark'
     | 'em';
   children: React.ReactNode;
+  style?: React.CSSProperties;
 }
 
 const TagMap = (props: ITextProps) => {
-  const { tag, className, children } = props;
-  const tagProps = { className, children };
+  const { tag, className, children, style } = props;
+  const tagProps = { className, children, style };
   if (tag === 'p') return <p {...tagProps} />;
   if (tag === 'b') return <b {...tagProps} />;
   if (tag === 'h1') return <h1 {...tagProps} />;
