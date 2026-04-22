@@ -1,6 +1,6 @@
 import { Row } from '../../common/containers/Flex';
 import { Text } from '../../common/text/Text';
-import { IconProps, Icons } from '../icons/IconMap';
+import { IconProps, Icons } from '../icons/Icons';
 
 interface TitleIconProps {
   title?: string;

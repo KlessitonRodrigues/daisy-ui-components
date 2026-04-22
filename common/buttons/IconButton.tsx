@@ -1,4 +1,4 @@
-import { IconProps, Icons } from '../icons/IconMap';
+import { IconProps, Icons } from '../icons/Icons';
 import { Button, ButtonProps } from './Button';
 
 export const IconButton = (props: IconProps & ButtonProps) => {

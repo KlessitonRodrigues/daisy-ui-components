@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { Button } from '../buttons/Button';
 import { Column, Row } from '../containers/Flex';
-import { Icons } from '../icons/IconMap';
+import { Icons } from '../icons/Icons';
 import { Text } from '../text/Text';
 
 interface NotificationListProps {

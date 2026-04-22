@@ -12,6 +12,7 @@ export * from './common/inputs/MaskInputField';
 export * from './common/inputs/CurrencyInputField';
 export * from './common/inputs/RadioInputField';
 export * from './common/icons/IconMap';
+export * from './common/icons/Icons';
 export * from './common/containers/Forms';
 export * from './common/papers/Paper';
 export * from './common/menu/Menu';
@@ -44,10 +45,8 @@ export * from './components/charts/RadialChart';
 export * from './components/cards/Currency';
 export * from './components/users/UserInitials';
 export * from './components/navbars/FixedTopNavbar';
+export * from './components/navbars/TopNavbar';
 export * from './components/i18n/RedirectPage';
-
-// Hooks
-export * from './hooks/useBooleanState';
 
 // Utils
 export * from './utils/CSSColors';

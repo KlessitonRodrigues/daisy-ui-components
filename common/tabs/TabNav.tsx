@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IconProps, Icons } from '../icons/IconMap';
+import { IconProps, Icons } from '../icons/Icons';
 
 export type TabListProps = {
   className?: string;

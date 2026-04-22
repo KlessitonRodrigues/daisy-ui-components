@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
-import { IconProps, Icons } from '../icons/IconMap';
+import { IconProps, Icons } from '../icons/Icons';
 import { Text } from '../text/Text';
 
 export interface MenuProps extends HTMLAttributes<HTMLUListElement> {

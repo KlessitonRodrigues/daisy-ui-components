@@ -1,7 +1,7 @@
 import { ToastContainer, toast } from 'react-toastify';
 
 import { materialColors } from '../../utils/CSSColors';
-import { Icons } from '../icons/IconMap';
+import { Icons } from '../icons/Icons';
 
 export const Toastify = () => {
   return (

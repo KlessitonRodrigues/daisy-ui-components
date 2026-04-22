@@ -1,6 +1,6 @@
 'use client';
 import { Row } from '../containers/Flex';
-import { Icons } from '../icons/IconMap';
+import { Icons } from '../icons/Icons';
 import { Text } from '../text/Text';
 
 interface SwitchProps {

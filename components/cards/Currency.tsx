@@ -1,6 +1,6 @@
 import { Card } from '../../common/cards/Card';
 import { Row } from '../../common/containers/Flex';
-import { Icons } from '../../common/icons/IconMap';
+import { Icons } from '../../common/icons/Icons';
 import { Text } from '../../common/text/Text';
 
 interface CurrencyCardProps {

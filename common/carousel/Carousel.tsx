@@ -1,4 +1,4 @@
-import { Icons } from '../icons/IconMap';
+import { Icons } from '../icons/Icons';
 
 interface CarouselProps {
   height?: number | string;

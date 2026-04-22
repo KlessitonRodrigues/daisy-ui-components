@@ -3,7 +3,7 @@ import { HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Column } from '../containers/Flex';
-import { IconProps, Icons } from '../icons/IconMap';
+import { IconProps, Icons } from '../icons/Icons';
 import { Text } from '../text/Text';
 
 export interface DescriptionMenuProps extends HTMLAttributes<HTMLUListElement> {

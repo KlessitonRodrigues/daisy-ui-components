@@ -4,7 +4,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { Row } from '../containers/Flex';
 import If from '../containers/If';
-import { IconProps, Icons } from '../icons/IconMap';
+import { IconProps, Icons } from '../icons/Icons';
 
 export interface BreadcumbsProps {
   className?: string;
