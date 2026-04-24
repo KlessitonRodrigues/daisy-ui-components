@@ -6,7 +6,8 @@ type IFlex = {
   flexX?: 'center' | 'start' | 'end' | 'between' | 'stretch';
   responsive?: 'sm' | 'md' | 'lg' | 'xl' | '2xl';
   gap?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  style?: React.CSSProperties;
 };
 
 export const Row = (props: IFlex) => {

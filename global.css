@@ -28,6 +28,7 @@
   --color-default-black: #1f2937;
   --color-opacity-black: #0006;
   --color-default-border: #d1d5db;
+  --color-transparent-bg: #ffffff99;
   --skeleton-base: #e5e7eb;
   --skeleton-shimmer: #f3f4f6;
 
@@ -113,6 +114,7 @@ body.dark {
   --color-fg4: #d1d5db;
   --color-opacity-black: #0006;
   --color-default-border: #595959;
+  --color-transparent-bg: #00000099;
   --skeleton-base: #4b5563;
   --skeleton-shimmer: #6b7280;
 
@@ -154,6 +156,9 @@ textarea.hide-caret {
 .text-main {
   color: var(--color-main);
 }
+
+/* [&>span]:text-main */
+
 .text-fg1 {
   color: var(--color-fg1);
 }
@@ -187,6 +192,9 @@ textarea.hide-caret {
 .text-black {
   color: var(--color-default-black);
 }
+.text-dual-tone span {
+  color: var(--color-main);
+}
 
 .bg-main {
   background-color: var(--color-main-bg);
@@ -202,6 +210,9 @@ textarea.hide-caret {
 }
 .bg-bg4 {
   background-color: var(--color-bg4);
+}
+.bg-bg1-transparent {
+  background-color: var(--color-transparent-bg);
 }
 .bg-yellow {
   background-color: var(--color-default-yellow);

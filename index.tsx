@@ -47,6 +47,10 @@ export * from './components/users/UserInitials';
 export * from './components/navbars/FixedTopNavbar';
 export * from './components/navbars/TopNavbar';
 export * from './components/i18n/RedirectPage';
+export * from './components/showcase/HeadSection';
+export * from './components/showcase/MiddleSection';
+export * from './components/showcase/MiddleSection2';
+export * from './components/showcase/middle/HorizontalCarousel';
 
 // Utils
 export * from './utils/CSSColors';

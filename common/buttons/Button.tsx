@@ -7,16 +7,18 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   size?: 'xs' | 'sm' | 'md' | 'lg';
   variant?: 'wide' | 'block' | 'square' | 'circle';
   ghost?: boolean;
+  outline?: boolean;
   link?: boolean;
   loading?: boolean;
 }
 
 export const Button = (props: ButtonProps) => {
-  const { className, ghost, link, loading, ...btnProps } = props;
+  const { className, ghost, link, outline, loading, ...btnProps } = props;
 
   const btnClasses = ['btn rounded-sm'];
   if (ghost) btnClasses.push('btn-ghost');
   if (link) btnClasses.push('btn-link');
+  if (outline) btnClasses.push('btn-outline border-base-300 hover:bg-bg2');
   if (props.variant) btnClasses.push(`btn-${props.variant}`);
   btnClasses.push(`btn-${props.color || ''}`);
   btnClasses.push(`btn-${props.size || 'md'}`);

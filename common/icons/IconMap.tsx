@@ -51,6 +51,7 @@ export const IconMap = {
   bluetooth: <Pi.PiBluetoothBold size={'100%'} />,
   vibrate: <Pi.PiVibrateBold size={'100%'} />,
   paymentCard: <Pi.PiCreditCard size={'100%'} />,
-  car: <Pi.PiCarProfileBold size={'100%'} />,
+  car: <Pi.PiCarProfile size={'100%'} />,
   truck: <Pi.PiTruckBold size={'100%'} />,
+  quote: <Pi.PiQuotesBold size={'100%'} />,
 };
