@@ -2,9 +2,11 @@ import { ImageBox } from '../../../common/Image/ImageBox';
 import { Button } from '../../../common/buttons/Button';
 import { Card } from '../../../common/cards/Card';
 import { Column, Row } from '../../../common/containers/Flex';
+import { PageSection } from '../../../common/containers/Section';
 import { Text } from '../../../common/text/Text';
 
 interface CardListAndImagesSectionProps {
+  id?: string;
   title: React.ReactNode;
   description: React.ReactNode;
   buttonText: React.ReactNode;
@@ -16,11 +18,11 @@ interface CardListAndImagesSectionProps {
 }
 
 export const CardListAndImagesSection = (props: CardListAndImagesSectionProps) => {
-  const { title, description, buttonText, features } = props;
+  const { id, title, description, buttonText, features } = props;
 
   return (
-    <Column className="w-full gap-12 p-8">
-      <Column gap={8} className="w-full">
+    <PageSection id={id}>
+      <Column gap={8} className="w-full mb-8">
         <Text
           bold
           centered
@@ -52,6 +54,6 @@ export const CardListAndImagesSection = (props: CardListAndImagesSectionProps) =
           </Card>
         ))}
       </Row>
-    </Column>
+    </PageSection>
   );
 };

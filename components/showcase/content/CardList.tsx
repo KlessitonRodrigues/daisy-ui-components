@@ -1,9 +1,11 @@
 import { Button } from '../../../common/buttons/Button';
 import { Card } from '../../../common/cards/Card';
 import { Column, Row } from '../../../common/containers/Flex';
+import { PageSection } from '../../../common/containers/Section';
 import { Text } from '../../../common/text/Text';
 
 interface CardListSectionProps {
+  id?: string;
   title: React.ReactNode;
   buttonText?: React.ReactNode;
   features: {
@@ -13,12 +15,13 @@ interface CardListSectionProps {
 }
 
 export const CardListSection = (props: CardListSectionProps) => {
-  const { title, buttonText, features } = props;
+  const { id, title, buttonText, features } = props;
 
   return (
-    <Column className="w-full gap-10 p-8">
+    <PageSection>
       <Column gap={8} className="w-full items-center">
         <Text
+          id={id}
           bold
           centered
           tag="h2"
@@ -49,6 +52,6 @@ export const CardListSection = (props: CardListSectionProps) => {
           ))}
         </Row>
       </div>
-    </Column>
+    </PageSection>
   );
 };

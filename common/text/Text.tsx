@@ -1,4 +1,5 @@
 interface ITextProps {
+  id?: string;
   bold?: boolean;
   centered?: boolean;
   inline?: boolean;
@@ -25,8 +26,8 @@ interface ITextProps {
 }
 
 const TagMap = (props: ITextProps) => {
-  const { tag, className, children, style } = props;
-  const tagProps = { className, children, style };
+  const { tag, className, children, style, id } = props;
+  const tagProps = { className, children, style, id };
   if (tag === 'p') return <p {...tagProps} />;
   if (tag === 'b') return <b {...tagProps} />;
   if (tag === 'h1') return <h1 {...tagProps} />;
@@ -46,6 +47,7 @@ const TagMap = (props: ITextProps) => {
 export const Text = (props: ITextProps) => {
   const { bold, centered, color, size, opacity, inline, className = '' } = props;
   const textStyle: string[] = [];
+
   if (bold) textStyle.push('font-bold');
   if (centered) textStyle.push('text-center');
   if (color) textStyle.push(`text-${color}`);

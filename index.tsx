@@ -32,6 +32,8 @@ export * from './common/badge/Bagde';
 export * from './common/selector/Selector';
 export * from './common/modal/ConfirmModal';
 export * from './common/swap/SwapElements';
+export * from './common/containers/ResponsiveButton';
+export * from './common/containers/InnerHTML';
 
 // Components
 export * from './components/authetication/SignInScreen';

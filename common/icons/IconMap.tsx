@@ -54,4 +54,6 @@ export const IconMap = {
   car: <Pi.PiCarProfile size={'100%'} />,
   truck: <Pi.PiTruckBold size={'100%'} />,
   quote: <Pi.PiQuotesBold size={'100%'} />,
+  dots: <Pi.PiDotsThreeVerticalBold size={'100%'} />,
+  website: <Pi.PiGlobeBold size={'100%'} />,
 };

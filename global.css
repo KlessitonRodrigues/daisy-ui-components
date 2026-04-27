@@ -341,32 +341,76 @@ textarea.hide-caret {
 }
 
 .line-top-left,
-.line-bottom-right {
+.line-bottom-right,
+.line-bottom-hover,
+.clicle-bottom-right,
+.square-back-shadow {
   position: relative;
+  z-index: 0;
 }
 
 .line-top-left::before {
   content: '';
   position: absolute;
-  top: -30%;
+  top: -28%;
   left: -2.5rem;
   width: 2.5rem;
-  height: 60%;
-  border-radius: 12px 0 0 12px;
-  border-left: 2px solid var(--color-default-border);
-  border-top: 2px solid var(--color-default-border);
-  border-bottom: 2px solid var(--color-default-border);
+  height: 40%;
+  border-radius: 32px 0 0 32px;
+  border-left: 12px solid var(--color-default-border);
+  border-top: 12px solid var(--color-default-border);
+  border-bottom: 12px solid var(--color-default-border);
 }
 
-.line-bottom-right::after {
+.line-bottom-right::before {
   content: '';
   position: absolute;
-  top: -30%;
+  top: -28%;
   right: -2.5rem;
   width: 2.5rem;
-  height: 60%;
-  border-radius: 0 12px 12px 0;
-  border-right: 2px solid var(--color-default-border);
-  border-top: 2px solid var(--color-default-border);
-  border-bottom: 2px solid var(--color-default-border);
+  height: 40%;
+  border-radius: 0 32px 32px 0;
+  border-right: 12px solid var(--color-default-border);
+  border-top: 12px solid var(--color-default-border);
+  border-bottom: 12px solid var(--color-default-border);
+}
+
+.line-bottom-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -0.2rem;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-main);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.line-bottom-hover:hover::after {
+  transform: scaleX(1);
+}
+
+.clicle-bottom-right::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  bottom: -4rem;
+  right: -3rem;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 2rem;
+  border: 1.2rem solid var(--color-default-border);
+}
+
+.square-back-shadow::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 1rem;
+  right: -1rem;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg4);
 }

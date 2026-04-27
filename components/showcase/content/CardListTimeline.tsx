@@ -3,6 +3,7 @@ import { twMerge } from 'tailwind-merge';
 import { ImageBox } from '../../../common/Image/ImageBox';
 import { Column, Row } from '../../../common/containers/Flex';
 import If from '../../../common/containers/If';
+import { PageSection } from '../../../common/containers/Section';
 import { Text } from '../../../common/text/Text';
 
 interface CardListTimelineProps {
@@ -17,7 +18,7 @@ export const CardListTimeline = (props: CardListTimelineProps) => {
   const { items } = props;
 
   return (
-    <Column gap={8} className="p-12">
+    <PageSection>
       {items.map((item, index) => {
         return (
           <Row
@@ -26,7 +27,7 @@ export const CardListTimeline = (props: CardListTimelineProps) => {
             flexX="center"
             responsive="md"
             className={twMerge(
-              'border rounded-md p-12 max-w-4xl',
+              'border rounded-md p-12 mb-8 max-w-4xl',
               index > 0 && (index % 2 === 0 ? 'line-top-left' : 'line-bottom-right'),
             )}
           >
@@ -45,6 +46,6 @@ export const CardListTimeline = (props: CardListTimelineProps) => {
           </Row>
         );
       })}
-    </Column>
+    </PageSection>
   );
 };

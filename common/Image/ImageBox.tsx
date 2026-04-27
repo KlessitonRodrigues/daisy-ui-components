@@ -11,7 +11,10 @@ interface ImageBoxProps {
 export const ImageBox = (props: ImageBoxProps) => {
   const { src, alt, width, height, className } = props;
   return (
-    <div className={twMerge('w-full bg-gray-200', className)} style={{ width, height }}>
+    <div
+      className={twMerge('w-full max-w-md md:max-w-4xl bg-gray-200 overflow-hidden', className)}
+      style={{ width, height }}
+    >
       {src ? (
         <img src={src} alt={alt} className="w-full h-full object-cover rounded-lg" />
       ) : (
