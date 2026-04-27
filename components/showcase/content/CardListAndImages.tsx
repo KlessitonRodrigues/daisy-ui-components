@@ -1,10 +1,10 @@
-import { ImageBox } from '../../common/Image/ImageBox';
-import { Button } from '../../common/buttons/Button';
-import { Card } from '../../common/cards/Card';
-import { Column, Row } from '../../common/containers/Flex';
-import { Text } from '../../common/text/Text';
+import { ImageBox } from '../../../common/Image/ImageBox';
+import { Button } from '../../../common/buttons/Button';
+import { Card } from '../../../common/cards/Card';
+import { Column, Row } from '../../../common/containers/Flex';
+import { Text } from '../../../common/text/Text';
 
-interface MiddleSectionProps {
+interface CardListAndImagesSectionProps {
   title: React.ReactNode;
   description: React.ReactNode;
   buttonText: React.ReactNode;
@@ -15,7 +15,7 @@ interface MiddleSectionProps {
   }[];
 }
 
-export const MiddleSection = (props: MiddleSectionProps) => {
+export const CardListAndImagesSection = (props: CardListAndImagesSectionProps) => {
   const { title, description, buttonText, features } = props;
 
   return (

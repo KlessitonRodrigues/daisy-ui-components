@@ -47,10 +47,11 @@ export * from './components/users/UserInitials';
 export * from './components/navbars/FixedTopNavbar';
 export * from './components/navbars/TopNavbar';
 export * from './components/i18n/RedirectPage';
-export * from './components/showcase/HeadSection';
-export * from './components/showcase/MiddleSection';
-export * from './components/showcase/MiddleSection2';
-export * from './components/showcase/middle/HorizontalCarousel';
+export * from './components/showcase/headers/ImageRightHeader';
+export * from './components/showcase/content/CardListAndImages';
+export * from './components/showcase/content/CardList';
+export * from './components/showcase/content/HorizontalCarousel';
+export * from './components/showcase/content/CardListTimeline';
 
 // Utils
 export * from './utils/CSSColors';

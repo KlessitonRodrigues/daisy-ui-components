@@ -339,3 +339,34 @@ textarea.hide-caret {
   opacity: 0;
   animation: slide-up 0.5s ease-out 1s forwards;
 }
+
+.line-top-left,
+.line-bottom-right {
+  position: relative;
+}
+
+.line-top-left::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  left: -2.5rem;
+  width: 2.5rem;
+  height: 60%;
+  border-radius: 12px 0 0 12px;
+  border-left: 2px solid var(--color-default-border);
+  border-top: 2px solid var(--color-default-border);
+  border-bottom: 2px solid var(--color-default-border);
+}
+
+.line-bottom-right::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -2.5rem;
+  width: 2.5rem;
+  height: 60%;
+  border-radius: 0 12px 12px 0;
+  border-right: 2px solid var(--color-default-border);
+  border-top: 2px solid var(--color-default-border);
+  border-bottom: 2px solid var(--color-default-border);
+}

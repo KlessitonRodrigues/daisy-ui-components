@@ -1,9 +1,9 @@
-import { Button } from '../../common/buttons/Button';
-import { Card } from '../../common/cards/Card';
-import { Column, Row } from '../../common/containers/Flex';
-import { Text } from '../../common/text/Text';
+import { Button } from '../../../common/buttons/Button';
+import { Card } from '../../../common/cards/Card';
+import { Column, Row } from '../../../common/containers/Flex';
+import { Text } from '../../../common/text/Text';
 
-interface MiddleSection2Props {
+interface CardListSectionProps {
   title: React.ReactNode;
   buttonText?: React.ReactNode;
   features: {
@@ -12,7 +12,7 @@ interface MiddleSection2Props {
   }[];
 }
 
-export const MiddleSection2 = (props: MiddleSection2Props) => {
+export const CardListSection = (props: CardListSectionProps) => {
   const { title, buttonText, features } = props;
 
   return (

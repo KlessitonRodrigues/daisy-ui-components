@@ -1,9 +1,9 @@
-import { ImageBox } from '../../common/Image/ImageBox';
-import { Button } from '../../common/buttons/Button';
-import { Column, Row } from '../../common/containers/Flex';
-import { Text } from '../../common/text/Text';
+import { ImageBox } from '../../../common/Image/ImageBox';
+import { Button } from '../../../common/buttons/Button';
+import { Column, Row } from '../../../common/containers/Flex';
+import { Text } from '../../../common/text/Text';
 
-interface HeadSectionProps {
+interface ImageRightHeaderProps {
   imgSrc?: string;
   title?: React.ReactNode;
   description?: React.ReactNode;
@@ -12,7 +12,7 @@ interface HeadSectionProps {
   button2Text?: React.ReactNode;
 }
 
-export const HeadSection = (props: HeadSectionProps) => {
+export const ImageRightHeader = (props: ImageRightHeaderProps) => {
   const { imgSrc, ...content } = props;
 
   return (
