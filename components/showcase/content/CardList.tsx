@@ -37,7 +37,7 @@ export const CardListSection = (props: CardListSectionProps) => {
       </Column>
 
       <div className="w-full rounded-xl bg-bg3 p-8">
-        <Row responsive="lg" gap={8} flexX="center">
+        <Row responsive="lg" className="lg:items-stretch" gap={8}>
           {features.map((feature, index) => (
             <Card key={index} className="border-0 bg-bg1 p-6 w-full max-w-sm hover:bg-bg1">
               <Column flexX="start" gap={3}>

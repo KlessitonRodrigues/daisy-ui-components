@@ -54,6 +54,7 @@ export * from './components/showcase/content/CardListAndImages';
 export * from './components/showcase/content/CardList';
 export * from './components/showcase/content/HorizontalCarousel';
 export * from './components/showcase/content/CardListTimeline';
+export * from './components/showcase/footers/SimpleFooter';
 
 // Utils
 export * from './utils/CSSColors';

@@ -56,4 +56,11 @@ export const IconMap = {
   quote: <Pi.PiQuotesBold size={'100%'} />,
   dots: <Pi.PiDotsThreeVerticalBold size={'100%'} />,
   website: <Pi.PiGlobeBold size={'100%'} />,
+  instagram: <Pi.PiInstagramLogoBold size={'100%'} />,
+  linkedin: <Pi.PiLinkedinLogoBold size={'100%'} />,
+  twitter: <Pi.PiTwitterLogoBold size={'100%'} />,
+  facebook: <Pi.PiFacebookLogoBold size={'100%'} />,
+  whatsapp: <Pi.PiWhatsappLogoBold size={'100%'} />,
+  document: <Pi.PiFileTextBold size={'100%'} />,
+  link: <Pi.PiLinkBold size={'100%'} />,
 };

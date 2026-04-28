@@ -356,7 +356,7 @@ textarea.hide-caret {
   left: -2.5rem;
   width: 2.5rem;
   height: 40%;
-  border-radius: 32px 0 0 32px;
+  border-radius: 4rem 0 0 4rem;
   border-left: 12px solid var(--color-default-border);
   border-top: 12px solid var(--color-default-border);
   border-bottom: 12px solid var(--color-default-border);
@@ -369,7 +369,7 @@ textarea.hide-caret {
   right: -2.5rem;
   width: 2.5rem;
   height: 40%;
-  border-radius: 0 32px 32px 0;
+  border-radius: 0 4rem 4rem 0;
   border-right: 12px solid var(--color-default-border);
   border-top: 12px solid var(--color-default-border);
   border-bottom: 12px solid var(--color-default-border);
@@ -379,7 +379,7 @@ textarea.hide-caret {
   content: '';
   position: absolute;
   left: 0;
-  bottom: -0.2rem;
+  bottom: -0.4rem;
   width: 100%;
   height: 3px;
   background-color: var(--color-main);

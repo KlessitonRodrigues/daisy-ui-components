@@ -27,7 +27,7 @@ export const ImageRightHeader = (props: ImageRightHeaderProps) => {
           <Text size="2xl" opacity="80">
             {content.description}
           </Text>
-          <Row responsive="md" gap={4}>
+          <Row responsive="xl" gap={4}>
             <Button outline size="lg">
               {content.buttonText}
             </Button>

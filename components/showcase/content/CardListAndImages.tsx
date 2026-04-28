@@ -39,7 +39,7 @@ export const CardListAndImagesSection = (props: CardListAndImagesSectionProps) =
         </Button>
       </Column>
 
-      <Row responsive="lg" gap={8} flexX="start">
+      <Row responsive="lg" className="lg:items-stretch" gap={8}>
         {features.map((feature, index) => (
           <Card key={index} className="border p-6 hover:bg-bg2 w-full max-w-120">
             <Column flexX="start" gap={3}>
