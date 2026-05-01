@@ -48,13 +48,15 @@ export * from './components/cards/Currency';
 export * from './components/users/UserInitials';
 export * from './components/navbars/FixedTopNavbar';
 export * from './components/navbars/TopNavbar';
-export * from './components/i18n/RedirectPage';
 export * from './components/showcase/headers/ImageRightHeader';
 export * from './components/showcase/content/CardListAndImages';
 export * from './components/showcase/content/CardList';
 export * from './components/showcase/content/HorizontalCarousel';
 export * from './components/showcase/content/CardListTimeline';
 export * from './components/showcase/footers/SimpleFooter';
+export * from './components/settings/ReadSettings';
+export * from './components/settings/LangSettings';
+export * from './components/settings/ThemeSettings';
 
 // Utils
 export * from './utils/CSSColors';

@@ -63,4 +63,6 @@ export const IconMap = {
   whatsapp: <Pi.PiWhatsappLogoBold size={'100%'} />,
   document: <Pi.PiFileTextBold size={'100%'} />,
   link: <Pi.PiLinkBold size={'100%'} />,
+  sun: <Pi.PiSunBold size={'100%'} />,
+  moon: <Pi.PiMoonBold size={'100%'} />,
 };

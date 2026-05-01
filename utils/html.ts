@@ -1,40 +1,33 @@
-export const getBrowserWindow = () => {
-  if (typeof window === 'undefined') return null;
-  return window;
-};
+'use client';
 
 export const getFromStorage = (key: string) => {
-  const window = getBrowserWindow();
   if (!window) return '';
   return window.localStorage.getItem(key);
 };
 
 export const setToStorage = (key: string, value: string) => {
-  const window = getBrowserWindow();
   if (!window) return '';
   window.localStorage.setItem(key, value);
 };
 
 export const isDarkTheme = () => {
-  const window = getBrowserWindow();
   if (!window) return false;
   const body = window.document.body;
   if (body.classList.contains('dark')) return true;
   return false;
 };
 
-export const setTheme = (theme: 'light' | 'dark') => {
-  const window = getBrowserWindow();
+export const setDefaultTheme = (theme: 'light' | 'dark') => {
   if (!window) return;
   const body = window.document.body;
   if (theme === 'dark') body.classList.add('dark');
   else body.classList.remove('dark');
   if (theme === 'light') body.classList.add('light');
   else body.classList.remove('light');
+  setToStorage('theme', theme);
 };
 
 export const getDefaultTheme = () => {
-  const window = getBrowserWindow();
   if (!window) return 'light';
   const storedTheme = getFromStorage('theme');
   if (storedTheme) return storedTheme as 'light' | 'dark';
@@ -49,7 +42,6 @@ export const getDefaultLanguage = () => {
   const storedLang = getFromStorage('language') || '';
   if (languages.includes(storedLang)) return storedLang;
 
-  const window = getBrowserWindow();
   if (!window) return 'en';
   const browserLang = window.navigator.language || 'en';
   const lang = browserLang.split('-')[0];
@@ -58,8 +50,25 @@ export const getDefaultLanguage = () => {
 
 export const setDefaultLanguage = (lang: string) => {
   setToStorage('language', lang);
-  const window = getBrowserWindow();
-  if (window) window.location.reload();
+  if (!window) return;
+  const path = new URL(window.location.href);
+  const pathArr = path.pathname.split('/').filter(Boolean);
+  if (pathArr[0].length === 2) pathArr.shift();
+  const newPath = `/${lang}/${pathArr.join('/')}${path.search}`;
+  window.history.replaceState({}, '', newPath);
+  window.location.reload();
+};
+
+export const getRedirectPathByLanguage = (allowedlangs: string[]) => {
+  const defaultLanguage = getDefaultLanguage();
+  const path = new URL(window.location.href);
+  const pathName = path.pathname.split('/')[1];
+
+  if (!allowedlangs.includes(defaultLanguage)) return null;
+  if (pathName === defaultLanguage) return null;
+  if (pathName && allowedlangs.includes(pathName)) return null;
+  const targetUrl = `/${defaultLanguage}${path.pathname}${path.search}`;
+  return targetUrl;
 };
 
 export const inputNumbers = (ev: any, decimals?: boolean) => {
