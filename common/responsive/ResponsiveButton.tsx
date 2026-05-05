@@ -7,13 +7,19 @@ import { Icons } from '../icons/Icons';
 import { SwapElements } from '../swap/SwapElements';
 
 interface ResponsiveButtonProps {
-  icon?: 'menu' | 'dots';
-  position?: 'bottom' | 'top';
+  position: 'topLeft' | 'topRight' | 'bottomLeft' | 'bottomRight';
   children: React.ReactNode;
 }
 
+const positionMap: Record<ResponsiveButtonProps['position'], string> = {
+  topLeft: 'right-0 -top-2 -translate-y-full',
+  topRight: 'left-0 -top-2 -translate-y-full',
+  bottomLeft: 'right-0 -bottom-2 translate-y-full',
+  bottomRight: 'left-0 -bottom-2 translate-y-full',
+};
+
 export const ResponsiveButton = (props: ResponsiveButtonProps) => {
-  const { icon, position, children } = props;
+  const { position, children } = props;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -22,22 +28,22 @@ export const ResponsiveButton = (props: ResponsiveButtonProps) => {
       <div className="lg:hidden">
         <Button
           ghost
-          variant="square"
           size="lg"
+          variant="square"
           className="transition"
           onClick={() => setIsOpen(prev => !prev)}
         >
           <SwapElements
             active={!isOpen}
             swapEffect="rotate"
-            offElement={<Icons iconType={icon || 'menu'} iconSize="2rem" />}
-            onElement={<Icons iconType="close" iconSize="2rem" />}
+            offElement={<Icons iconType="menuDots" iconSize="1.6rem" />}
+            onElement={<Icons iconType="close" iconSize="1.6rem" />}
           />
         </Button>
         <div
           className={twMerge(
-            'fixed z-20 left-2 w-[94vw] p-6 bg-bg1 rounded-lg shadow-sm border',
-            position === 'top' ? '-mt-60' : 'mt-4',
+            'absolute z-50 p-6 bg-bg1 rounded-sm shadow-sm border',
+            positionMap[position],
           )}
           style={{ display: isOpen ? 'flex' : 'none' }}
         >

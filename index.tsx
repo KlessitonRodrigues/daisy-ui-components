@@ -2,6 +2,7 @@
 export * from './common/containers/Flex';
 export * from './common/containers/If';
 export * from './common/containers/Page';
+export * from './common/containers/InnerHTML';
 export * from './common/text/Text';
 export * from './common/buttons/Button';
 export * from './common/buttons/IconButton';
@@ -32,8 +33,8 @@ export * from './common/badge/Bagde';
 export * from './common/selector/Selector';
 export * from './common/modal/ConfirmModal';
 export * from './common/swap/SwapElements';
-export * from './common/containers/ResponsiveButton';
-export * from './common/containers/InnerHTML';
+export * from './common/responsive/ResponsiveMenu';
+export * from './common/responsive/ResponsiveButton';
 
 // Components
 export * from './components/authetication/SignInScreen';
