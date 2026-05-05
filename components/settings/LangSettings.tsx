@@ -29,7 +29,7 @@ export const LangSettings = () => {
       {currentLanguage && (
         <SwapElements
           active={currentLanguage === 'pt'}
-          swapEffect="flip"
+          swapEffect="rotate"
           onElement={<LangBtn />}
           offElement={<LangBtn />}
         />

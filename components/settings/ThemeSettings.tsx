@@ -25,7 +25,7 @@ export const ThemeSettings = () => {
     <Button size="sm" variant="square" onClick={toggleTheme}>
       <SwapElements
         active={isDark}
-        swapEffect="flip"
+        swapEffect="rotate"
         onElement={<Icons iconType="sun" iconSize="1.2rem" />}
         offElement={<Icons iconType="moon" iconSize="1.2rem" />}
       />
