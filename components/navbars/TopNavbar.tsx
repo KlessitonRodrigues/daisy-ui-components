@@ -1,16 +1,23 @@
+import { twMerge } from 'tailwind-merge';
+
 import { Row } from '../../common/containers/Flex';
 
 interface TopNavBarProps {
+  className?: string;
   leftComponent?: React.ReactNode;
   centerComponent?: React.ReactNode;
   rightComponent?: React.ReactNode;
 }
 
 export const TopNavBar = (props: TopNavBarProps) => {
-  const { leftComponent, centerComponent, rightComponent } = props;
+  const { className, leftComponent, centerComponent, rightComponent } = props;
 
   return (
-    <Row className="px-4 border-b sticky top-0 z-40 backdrop-blur-xl bg-bg1-transparent">
+    <Row
+      className={twMerge(
+        `px-4 border-b sticky top-0 z-40 backdrop-blur-xl bg-bg1-transparent ${className}`,
+      )}
+    >
       <Row className="navbar m-auto max-w-350 whitespace-nowrap">
         <Row flexX="start" gap={4}>
           {leftComponent}

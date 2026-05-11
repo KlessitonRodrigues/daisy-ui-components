@@ -35,7 +35,7 @@ export const IconMap = {
   plus: <Pi.PiPlusBold size={'100%'} />,
   save: <Pi.PiFloppyDiskBold size={'100%'} />,
   address: <Pi.PiMailbox size={'100%'} />,
-  brush: <Pi.PiPaintBrushBold size={'100%'} />,
+  brush: <Pi.PiPaintBrushHousehold size={'100%'} />,
   pencil: <Pi.PiPencilBold size={'100%'} />,
   notification: <Pi.PiBellBold size={'100%'} />,
   dollar: <Pi.PiMoneyBold size={'100%'} />,
@@ -65,4 +65,5 @@ export const IconMap = {
   link: <Pi.PiLinkBold size={'100%'} />,
   sun: <Pi.PiSunBold size={'100%'} />,
   moon: <Pi.PiMoonBold size={'100%'} />,
+  translate: <Pi.PiTranslateBold size={'100%'} />,
 };

@@ -1,6 +1,10 @@
+'use client';
 import { twMerge } from 'tailwind-merge';
 
-interface SelectorProps {
+import { toCss } from '../../utils/strings';
+
+interface SelectFieldProps {
+  className?: string;
   label?: string;
   description?: string;
   defaultValue?: string;
@@ -11,17 +15,20 @@ interface SelectorProps {
   onChange?: (value: string) => void;
 }
 
-export const Selector = (props: SelectorProps) => {
-  const { options, label, description, defaultValue, error, disabled, onChange } = props;
-  const selectClasses = [`w-full outline-none select select-${props.size || 'md'}`];
-  if (error) selectClasses.push('border-error');
-  if (disabled) selectClasses.push('opacity-50 cursor-not-allowed');
+export const SelectField = (props: SelectFieldProps) => {
+  const { className, options, size, label, description, defaultValue, error, disabled, onChange } =
+    props;
 
   return (
-    <fieldset className="fieldset w-full">
+    <fieldset className={twMerge('fieldset w-full', className)}>
       <legend className="fieldset-legend">{label}</legend>
       <select
-        className={twMerge(selectClasses.join(' '))}
+        className={twMerge(
+          `w-full outline-none select select-${props.size || 'md'}`,
+          toCss(size, `select-${size}`, 'select-md'),
+          toCss(error, 'border-error'),
+          toCss(disabled, 'opacity-50 cursor-not-allowed'),
+        )}
         defaultValue={defaultValue || 'Select'}
         disabled={disabled}
         onChange={e => onChange?.(e.target.value)}

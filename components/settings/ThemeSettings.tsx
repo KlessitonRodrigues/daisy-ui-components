@@ -22,7 +22,7 @@ export const ThemeSettings = () => {
   };
 
   return (
-    <Button size="sm" variant="square" onClick={toggleTheme}>
+    <Button variant="square" onClick={toggleTheme}>
       <SwapElements
         active={isDark}
         swapEffect="rotate"

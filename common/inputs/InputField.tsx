@@ -28,7 +28,7 @@ export const InputField = (props: InputFieldProps) => {
 
   return (
     <fieldset className={fieldsetClasses.join(' ')}>
-      <legend className="fieldset-legend">{props.label}</legend>
+      <legend className="fieldset-legend font-normal">{props.label}</legend>
       <label className={twMerge(inputClasses.join(' '), className)}>
         {props.before}
         <input

@@ -33,7 +33,7 @@
   --skeleton-shimmer: #f3f4f6;
 
   /* Daisy theme */
-  --size-field: 0.23rem;
+  --size-field: 0.2rem;
   --color-base-100: var(--color-bg1);
   --color-base-200: var(--color-bg3);
   --color-base-300: var(--color-bg4);
