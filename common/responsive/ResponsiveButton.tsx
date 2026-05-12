@@ -27,7 +27,7 @@ export const ResponsiveButton = (props: ResponsiveButtonProps) => {
       <div className="hidden lg:flex">{children}</div>
       <div className="lg:hidden">
         <Button
-          ghost
+          mode="ghost"
           size="lg"
           variant="square"
           className="transition"

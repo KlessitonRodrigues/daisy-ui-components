@@ -28,7 +28,7 @@ export const ImageRightHeader = (props: ImageRightHeaderProps) => {
             {content.description}
           </Text>
           <Row responsive="xl" gap={4}>
-            <Button outline size="lg">
+            <Button mode="outline" size="lg">
               {content.buttonText}
             </Button>
             <Button color="primary" size="lg">

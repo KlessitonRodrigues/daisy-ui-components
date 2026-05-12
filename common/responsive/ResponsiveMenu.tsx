@@ -25,7 +25,7 @@ export const ResponsiveMenu = (props: ResponsiveMenuProps) => {
       <div className="hidden lg:flex">{children}</div>
       <div className="lg:hidden">
         <Button
-          ghost
+          mode="ghost"
           size="lg"
           variant="square"
           className="transition"

@@ -1,36 +1,37 @@
 import { twMerge } from 'tailwind-merge';
 
+import { toCss } from '../../utils/strings';
+
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
   label?: string;
-  onClick?: () => void;
   color?: 'primary' | 'secondary' | 'accent' | 'neutral' | 'info' | 'success' | 'warning' | 'error';
   size?: 'xs' | 'sm' | 'md' | 'lg';
   variant?: 'wide' | 'block' | 'square' | 'circle';
-  ghost?: boolean;
-  outline?: boolean;
-  link?: boolean;
+  mode?: 'ghost' | 'outline' | 'link';
   loading?: boolean;
 }
 
 export const Button = (props: ButtonProps) => {
-  const { className, ghost, link, outline, loading, ...btnProps } = props;
+  const { className, loading, label, children, ...btnProps } = props;
 
-  const btnClasses = ['btn rounded-sm'];
-  if (ghost) btnClasses.push('btn-ghost');
-  if (link) btnClasses.push('btn-link');
-  if (outline) btnClasses.push('btn-outline border-base-300 hover:bg-bg2');
-  if (props.variant) btnClasses.push(`btn-${props.variant}`);
-  btnClasses.push(`btn-${props.color || ''}`);
-  btnClasses.push(`btn-${props.size || 'md'}`);
+  const btnStyles = twMerge([
+    'btn rounded-sm',
+    toCss(props.mode === 'ghost', 'btn-ghost'),
+    toCss(props.mode === 'link', 'btn-link'),
+    toCss(props.mode === 'outline', 'btn-outline border-base-300 hover:bg-bg2'),
+    toCss(props.disabled, 'cursor-not-allowed opacity-50'),
+    toCss(props.loading, 'cursor-not-allowed'),
+    toCss(props.variant, `btn-${props.variant}`),
+    toCss(props.size, `btn-${props.size}`, 'btn-md'),
+    toCss(props.color, `btn-${props.color}`),
+    props.className,
+  ]);
 
   return (
-    <button
-      className={twMerge(...btnClasses, className)}
-      disabled={loading || props.disabled}
-      {...btnProps}
-    >
+    <button className={btnStyles} disabled={loading} {...btnProps}>
       {loading && <span className="loading loading-spinner loading-xs" />}
-      {props.label || props.children}
+      {label || children}
     </button>
   );
 };
