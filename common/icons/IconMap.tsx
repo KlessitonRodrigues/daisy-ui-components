@@ -66,4 +66,5 @@ export const IconMap = {
   sun: <Pi.PiSunBold size={'100%'} />,
   moon: <Pi.PiMoonBold size={'100%'} />,
   translate: <Pi.PiTranslateBold size={'100%'} />,
+  rotate: <Pi.PiArrowsLeftRight size={'100%'} />,
 };

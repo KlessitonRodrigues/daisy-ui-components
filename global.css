@@ -96,6 +96,7 @@
 }
 
 body {
+  min-height: 100vh;
   background-color: var(--color-bg4);
   color: var(--color-fg4);
   transition:
