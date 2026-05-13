@@ -1,6 +1,8 @@
 import { HTMLAttributes } from 'react';
 import { twMerge } from 'tailwind-merge';
 
+import { toCss } from '../../utils/strings';
+
 export interface InputFieldProps extends HTMLAttributes<HTMLDivElement> {
   size?: 'sm' | 'md' | 'lg';
   type?: 'text' | 'email' | 'password' | 'number' | 'date';
@@ -16,23 +18,30 @@ export interface InputFieldProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const InputField = (props: InputFieldProps) => {
-  const { className } = props;
-  const inputClasses = ['input outline-none w-full'];
-  const fieldsetClasses = ['fieldset w-full'];
-  const iptClasses = ['text-base'];
+  const inputStyles = twMerge([
+    'input outline-none w-full',
+    toCss(props.error, 'input-error'),
+    toCss(props.size, `input-${props.size}`, 'input-md'),
+    props.className,
+  ]);
 
-  if (props.error) inputClasses.push('input-error');
-  if (inputClasses.includes('input-md')) fieldsetClasses.push(`-mb-4`);
-  if (props.hideCaret) iptClasses.push('hide-caret focus:text-primary');
-  inputClasses.push(`input-${props.size || 'md'}`);
+  const fieldsetStyles = twMerge([
+    'fieldset w-full',
+    toCss(!props.size || props.size === 'md', '-mb-4'),
+  ]);
+
+  const inputTextStyles = twMerge([
+    'text-base',
+    toCss(props.hideCaret, 'hide-caret focus:text-primary'),
+  ]);
 
   return (
-    <fieldset className={fieldsetClasses.join(' ')}>
+    <fieldset className={fieldsetStyles}>
       <legend className="fieldset-legend font-normal">{props.label}</legend>
-      <label className={twMerge(inputClasses.join(' '), className)}>
+      <label className={inputStyles}>
         {props.before}
         <input
-          className={iptClasses.join(' ')}
+          className={inputTextStyles}
           type={props.type || 'text'}
           placeholder={props.placeholder}
           disabled={props.disabled}

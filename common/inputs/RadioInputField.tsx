@@ -1,8 +1,9 @@
 import { twMerge } from 'tailwind-merge';
 
+import { toCss } from '../../utils/strings';
 import { Row } from '../containers/Flex';
 
-interface RadioInputFieldProps {
+export interface RadioInputFieldProps {
   className?: string;
   name: string;
   size?: 'sm' | 'md' | 'lg';
@@ -12,21 +13,23 @@ interface RadioInputFieldProps {
 }
 
 export const RadioInputField = (props: RadioInputFieldProps) => {
-  const { className, name, size, options, defaultValue, onChange } = props;
-  const iptStyle = ['radio radio-primary mx-2'];
-  if (size) iptStyle.push(`radio-${size}`);
+  const inputStyles = twMerge([
+    'radio radio-primary mx-2',
+    toCss(props.size, `radio-${props.size}`, 'radio-md'),
+    props.className,
+  ]);
 
   return (
-    <Row className={twMerge(className)}>
-      {options.map((option, index) => (
-        <label key={index} className="cursor-pointer">
+    <Row className={twMerge(props.className)}>
+      {props.options.map(option => (
+        <label key={option.value} className="cursor-pointer">
           <input
-            className={twMerge(...iptStyle, className)}
+            className={inputStyles}
             type="radio"
-            name={name}
+            name={props.name}
             aria-label={option.label}
-            defaultChecked={defaultValue === option.value}
-            onChange={() => onChange && onChange(option.value)}
+            defaultChecked={props.defaultValue === option.value}
+            onChange={() => props.onChange?.(option.value)}
           />
           <span className="text-xs">{option.label}</span>
         </label>

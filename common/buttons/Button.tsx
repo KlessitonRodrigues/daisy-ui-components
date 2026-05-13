@@ -10,11 +10,12 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   variant?: 'wide' | 'block' | 'square' | 'circle';
   mode?: 'ghost' | 'outline' | 'link';
   loading?: boolean;
+  onClick?: () => void;
+  disabled?: boolean;
+  btnProps?: React.ButtonHTMLAttributes<HTMLButtonElement>;
 }
 
 export const Button = (props: ButtonProps) => {
-  const { className, loading, label, children, ...btnProps } = props;
-
   const btnStyles = twMerge([
     'btn rounded-sm',
     toCss(props.mode === 'ghost', 'btn-ghost'),
@@ -29,9 +30,14 @@ export const Button = (props: ButtonProps) => {
   ]);
 
   return (
-    <button className={btnStyles} disabled={loading} {...btnProps}>
-      {loading && <span className="loading loading-spinner loading-xs" />}
-      {label || children}
+    <button
+      className={btnStyles}
+      disabled={props.loading}
+      onClick={props.onClick}
+      {...props.btnProps}
+    >
+      {props.loading && <span className="loading loading-spinner loading-xs" />}
+      {props.label || props.children}
     </button>
   );
 };
