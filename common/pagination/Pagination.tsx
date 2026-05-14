@@ -15,7 +15,7 @@ export const Pagination = (props: PaginationProps) => {
   return (
     <Row flexX="end" gap={0}>
       <Button
-        ghost
+        mode="ghost"
         size="sm"
         onClick={() => onPageChange?.(currentPage - 1)}
         disabled={currentPage === 1}
@@ -26,7 +26,7 @@ export const Pagination = (props: PaginationProps) => {
         <Text bold>{currentPage}</Text>
       </Button>
       <Button
-        ghost
+        mode="ghost"
         size="sm"
         onClick={() => onPageChange?.(currentPage + 1)}
         disabled={currentPage === lastPage}
@@ -34,7 +34,7 @@ export const Pagination = (props: PaginationProps) => {
         <Icons iconType="caretRight" iconSize="1.2rem" />
       </Button>
       <Button
-        ghost
+        mode="ghost"
         size="sm"
         onClick={() => onPageChange?.(currentPage + 5)}
         disabled={currentPage + 5 > lastPage}
@@ -42,7 +42,7 @@ export const Pagination = (props: PaginationProps) => {
         <Icons iconType="skipRight" iconSize="1.2rem" />
       </Button>
       <Button
-        ghost
+        mode="ghost"
         size="sm"
         onClick={() => onPageChange?.(lastPage)}
         disabled={currentPage === lastPage}

@@ -63,7 +63,7 @@ export const NavBar = (props: NavBarProps) => {
         <Row gap={4}>
           <If condition={!!sidebarComponent}>
             <Button
-              ghost
+              mode="ghost"
               variant="square"
               size="lg"
               className="transition"
@@ -90,7 +90,7 @@ export const NavBar = (props: NavBarProps) => {
             <Row flexY="center" className="w-fit px-2" gap={4}>
               <Badge content={userNotifications || 0}>
                 <Button
-                  ghost
+                  mode="ghost"
                   variant="square"
                   size="md"
                   className="transition"
@@ -101,7 +101,7 @@ export const NavBar = (props: NavBarProps) => {
                 </Button>
               </Badge>
               <Button
-                ghost
+                mode="ghost"
                 variant="square"
                 size="lg"
                 className="transition"

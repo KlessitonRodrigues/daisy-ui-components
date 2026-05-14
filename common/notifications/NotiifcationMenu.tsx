@@ -45,7 +45,7 @@ export const NotificationList = (props: NotificationListProps) => {
         <Text bold size="lg" className="w-full">
           {title || 'Notifications'}
         </Text>
-        <Button ghost variant="square" size="sm" onClick={() => onRemove?.()}>
+        <Button mode="ghost" variant="square" size="sm" onClick={() => onRemove?.()}>
           <Icons iconType="close" iconSize="1.2rem" />
         </Button>
       </Row>
