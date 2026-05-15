@@ -25,7 +25,7 @@ export const LangSettings = () => {
   const LangBtn = () => <b>{currentLanguage.toUpperCase()}</b>;
 
   return (
-    <Button variant="square" onClick={toggleLanguage}>
+    <Button mode="ghost" variant="square" onClick={toggleLanguage}>
       {currentLanguage && (
         <SwapElements
           active={currentLanguage === 'pt'}

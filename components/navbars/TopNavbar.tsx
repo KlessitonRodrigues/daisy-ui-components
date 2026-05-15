@@ -15,7 +15,7 @@ export const TopNavBar = (props: TopNavBarProps) => {
   return (
     <Row
       className={twMerge(
-        `topnavbar px-4 border-b sticky top-0 z-40 backdrop-blur-xl bg-bg1-transparent ${className}`,
+        `topnavbar px-4 sticky shadow-xs top-0 z-40 backdrop-blur-xl bg-bg1-transparent ${className}`,
       )}
     >
       <Row className="navbar m-auto max-w-350 whitespace-nowrap">
