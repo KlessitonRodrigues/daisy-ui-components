@@ -4,10 +4,6 @@
   "main": "./index.tsx",
   "types": "./index.tsx",
   "license": "MIT",
-  "exports": {
-    ".": "./index.tsx",
-    "./*": "./*"
-  },
   "dependencies": {
     "next": "^16.1.6",
     "react": "^19.2.5"
@@ -20,5 +16,9 @@
     "recharts": "^3.7.0",
     "tailwind-merge": "^3.4.1",
     "tailwindcss": "^4.1.18"
+  },
+  "exports": {
+    ".": "./index.tsx",
+    "./*": "./*"
   }
 }
