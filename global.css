@@ -277,6 +277,22 @@ textarea.hide-caret {
   box-shadow: var(--shadow-xl);
 }
 
+.text-divisor {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.text-divisor::before,
+.text-divisor::after {
+  content: '';
+  flex: 1;
+  margin: 0 2em;
+  border-bottom: 2px solid var(--color-default-border);
+}
+
 /* Animations */
 @keyframes slide-down {
   0% {

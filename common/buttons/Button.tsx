@@ -32,7 +32,7 @@ export const Button = (props: ButtonProps) => {
   return (
     <button
       className={btnStyles}
-      disabled={props.loading}
+      disabled={props.loading || props.disabled}
       onClick={props.onClick}
       {...props.btnProps}
     >

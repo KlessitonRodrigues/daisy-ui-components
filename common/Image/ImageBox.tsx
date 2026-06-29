@@ -16,7 +16,7 @@ export const ImageBox = (props: ImageBoxProps) => {
       style={{ width, height }}
     >
       {src ? (
-        <img src={src} alt={alt} className="w-full h-full object-cover rounded-lg" />
+        <img src={src} alt={alt} className="w-full h-full object-cover" />
       ) : (
         <div className="w-full h-full flex items-center justify-center text-gray-500">{alt}</div>
       )}
