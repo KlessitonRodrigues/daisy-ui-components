@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Badge } from '../../common/badge/Bagde';
 import { Button } from '../../common/buttons/Button';
 import { Row } from '../../common/containers/Flex';
-import If from '../../common/containers/If';
+import { If } from '../../common/containers/If';
 import { Icons } from '../../common/icons/Icons';
 import { SwapElements } from '../../common/swap/SwapElements';
 import { Text } from '../../common/text/Text';

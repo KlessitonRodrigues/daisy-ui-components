@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 import { Row } from '../containers/Flex';
-import If from '../containers/If';
+import { If } from '../containers/If';
 import { IconProps, Icons } from '../icons/Icons';
 
 export interface BreadcumbsProps {

@@ -36,6 +36,7 @@ export * from './common/modal/ConfirmModal';
 export * from './common/swap/SwapElements';
 export * from './common/responsive/ResponsiveMenu';
 export * from './common/responsive/ResponsiveButton';
+export * from './common/Image/ImageBox';
 
 // Components
 export * from './components/authetication/SignInScreen';

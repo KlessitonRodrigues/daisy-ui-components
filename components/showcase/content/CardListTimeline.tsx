@@ -2,7 +2,7 @@ import { twMerge } from 'tailwind-merge';
 
 import { ImageBox } from '../../../common/Image/ImageBox';
 import { Column, Row } from '../../../common/containers/Flex';
-import If from '../../../common/containers/If';
+import { If } from '../../../common/containers/If';
 import { PageSection } from '../../../common/containers/Section';
 import { Text } from '../../../common/text/Text';
 
