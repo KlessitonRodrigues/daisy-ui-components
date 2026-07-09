@@ -4,18 +4,19 @@
   "main": "./index.tsx",
   "types": "./index.tsx",
   "license": "MIT",
+  "private": true,
   "dependencies": {
-    "next": "^16.1.6",
-    "react": "^19.2.5"
+    "next": "^16.2.10",
+    "react": "^19.2.7"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^6.0.2",
-    "daisyui": "^5.5.18",
-    "react-icons": "^5.5.0",
+    "daisyui": "^5.6.16",
+    "react-icons": "^5.7.0",
     "react-toastify": "^11.0.5",
-    "recharts": "^3.7.0",
+    "recharts": "^3.9.2",
     "tailwind-merge": "^3.4.1",
-    "tailwindcss": "^4.1.18"
+    "tailwindcss": "^4.3.2"
   },
   "exports": {
     ".": "./index.tsx",
