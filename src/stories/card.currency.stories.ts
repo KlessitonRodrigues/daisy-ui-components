@@ -1,14 +1,12 @@
 import { Meta } from '@storybook/nextjs-vite';
 
 import { CurrencyCard } from '../components/cards/card.currency';
-import '../global.css';
 
 type Story = Meta<typeof CurrencyCard>;
 
-const meta = {
+export default {
   component: CurrencyCard,
   title: 'Cards/CurrencyCard',
-  tags: ['autodocs'],
 } satisfies Story;
 
 export const Default = {
@@ -17,7 +15,5 @@ export const Default = {
     percentage: 12,
     amount: '$12,345',
     percentageClassName: 'text-green',
-  } satisfies Story['args'],
-};
-
-export default meta;
+  },
+} satisfies Story;

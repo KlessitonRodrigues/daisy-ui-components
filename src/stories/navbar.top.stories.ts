@@ -1,14 +1,12 @@
 import type { Meta } from '@storybook/nextjs-vite';
 
 import { NavbarTop } from '../components/navbars/navbar.top';
-import '../global.css';
 
 type Story = Meta<typeof NavbarTop>;
 
-const meta = {
+export default {
   component: NavbarTop,
   title: 'Navbars/NavbarTop',
-  tags: ['autodocs'],
 } satisfies Story;
 
 export const Default = {
@@ -16,7 +14,5 @@ export const Default = {
     leftComponent: 'Left Component',
     centerComponent: 'Center Component',
     rightComponent: 'Right Component',
-  } satisfies Story['args'],
-};
-
-export default meta;
+  },
+} satisfies Story;

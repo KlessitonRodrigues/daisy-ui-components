@@ -1,14 +1,12 @@
 import { Meta } from '@storybook/nextjs-vite';
 
 import { PieChartComponent } from '../components/charts/chart.pie';
-import '../global.css';
 
 type Story = Meta<typeof PieChartComponent>;
 
-const meta = {
+export default {
   component: PieChartComponent,
   title: 'Charts/PieChart',
-  tags: ['autodocs'],
 } satisfies Story;
 
 export const Default = {
@@ -22,7 +20,5 @@ export const Default = {
     ],
     dataField: 'value',
     title: 'Pie Chart Example',
-  } satisfies Story['args'],
-};
-
-export default meta;
+  },
+} satisfies Story;

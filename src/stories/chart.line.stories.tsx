@@ -1,14 +1,12 @@
 import { Meta } from '@storybook/nextjs-vite';
 
 import { LineChartComponent } from '../components/charts/chart.line';
-import '../global.css';
 
 type Story = Meta<typeof LineChartComponent>;
 
-const meta = {
+export default {
   component: LineChartComponent,
   title: 'Charts/LineChart',
-  tags: ['autodocs'],
 } satisfies Story;
 
 export const Default = {
@@ -23,7 +21,5 @@ export const Default = {
     dataFields: ['value', 'name'],
     xField: 'name',
     title: 'Line Chart Example',
-  } satisfies Story['args'],
-};
-
-export default meta;
+  },
+} satisfies Story;

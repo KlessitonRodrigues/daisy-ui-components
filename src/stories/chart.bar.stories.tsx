@@ -1,14 +1,12 @@
 import { Meta } from '@storybook/nextjs-vite';
 
 import { BarChartComponent } from '../components/charts/chart.bar';
-import '../global.css';
 
 type Story = Meta<typeof BarChartComponent>;
 
-const meta = {
+export default {
   component: BarChartComponent,
   title: 'Charts/BarChart',
-  tags: ['autodocs'],
 } satisfies Story;
 
 export const Default = {
@@ -23,8 +21,8 @@ export const Default = {
     dataFields: ['value', 'name'],
     xField: 'name',
     title: 'Bar Chart Example',
-  } satisfies Story['args'],
-};
+  },
+} satisfies Story;
 
 export const Horizontal = {
   args: {
@@ -38,7 +36,5 @@ export const Horizontal = {
     dataFields: ['value', 'name'],
     yField: 'name',
     title: 'Bar Chart Example',
-  } satisfies Story['args'],
-};
-
-export default meta;
+  },
+} satisfies Story;

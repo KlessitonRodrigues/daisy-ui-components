@@ -1,14 +1,12 @@
 import { Meta } from '@storybook/nextjs-vite';
 
 import { RadialChartComponent } from '../components/charts/chart.radial';
-import '../global.css';
 
 type Story = Meta<typeof RadialChartComponent>;
 
-const meta = {
+export default {
   component: RadialChartComponent,
   title: 'Charts/RadialChart',
-  tags: ['autodocs'],
 } satisfies Story;
 
 export const Default = {
@@ -22,7 +20,5 @@ export const Default = {
     ],
     dataField: 'value',
     title: 'Radial Chart Example',
-  } satisfies Story['args'],
-};
-
-export default meta;
+  },
+} satisfies Story;
