@@ -1,25 +1,27 @@
-import type { Meta } from '@storybook/nextjs-vite';
+import { Meta } from '@storybook/nextjs-vite';
 
 import { Button } from '../components/common/common.button';
 import { Row } from '../components/common/common.container.flex';
-import { ResponsiveButton } from '../components/common/common.responsive.buttons';
 
-type Story = Meta<typeof ResponsiveButton>;
+type Story = Meta<typeof Row>;
 
 export default {
-  component: ResponsiveButton,
-  title: 'Common/ResponsiveButton',
+  component: Row,
+  title: 'Common/Row',
 } satisfies Story;
 
 export const Default = {
   args: {
-    position: 'bottomRight',
+    gap: 4,
+    responsive: 'lg',
+    flexX: 'center',
+    flexY: 'center',
     children: (
-      <Row responsive="lg">
+      <>
         <Button>Button 1</Button>
         <Button>Button 2</Button>
         <Button>Button 3</Button>
-      </Row>
+      </>
     ),
   },
 } satisfies Story;
