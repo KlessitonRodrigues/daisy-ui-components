@@ -2,14 +2,14 @@ import { twMerge } from 'tailwind-merge';
 
 import { Row } from '../common/common.container.flex';
 
-interface TopNavBarProps {
+interface NavbarTopProps {
   className?: string;
   leftComponent?: React.ReactNode;
   centerComponent?: React.ReactNode;
   rightComponent?: React.ReactNode;
 }
 
-export const TopNavBar = (props: TopNavBarProps) => {
+export const NavbarTop = (props: NavbarTopProps) => {
   const { className, leftComponent, centerComponent, rightComponent } = props;
 
   return (

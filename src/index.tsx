@@ -50,7 +50,7 @@ export * from './components/charts/chart.radial';
 export * from './components/cards/card.currency';
 export * from './components/users/user.avatar';
 export * from './components/navbars/navbar.fixed';
-export * from './components/navbars/navbar.auto';
+export * from './components/navbars/navbar.top';
 export * from './components/showcase/showcase.image.right.header';
 export * from './components/showcase/showcase.card.list.images';
 export * from './components/showcase/showcase.card.list';
