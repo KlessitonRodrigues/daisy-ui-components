@@ -13,7 +13,7 @@ export const Steps = (props: StepsProps) => {
 
   const StepList = useMemo(() => {
     return steps.map(({ label, active }, index) => (
-      <li key={index} className={`step ${toCss(active, 'step-primary')}`}>
+      <li key={index} className={`step text-xs ${toCss(active, 'step-primary')}`}>
         {label || ''}
       </li>
     ));
