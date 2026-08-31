@@ -45,7 +45,7 @@ export * from './components/authetication/auth.signin.container2';
 export * from './components/charts/chart.bar';
 export * from './components/charts/chart.line';
 export * from './components/charts/chart.pie';
-export * from './components/charts/chat.radar';
+export * from './components/charts/chart.radar';
 export * from './components/charts/chart.radial';
 export * from './components/cards/card.currency';
 export * from './components/users/user.avatar';

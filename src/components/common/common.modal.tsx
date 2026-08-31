@@ -38,11 +38,11 @@ export const ConfirmModal = (props: ConfirmModalProps) => {
           </Text>
           <Row flexX="between">
             <Button type="button" color="accent" onClick={handleCancel}>
-              <Icons iconType="close" />
+              <Icons iconSize="1rem" iconType="close" />
               {props.closeLabel || 'Cancel'}
             </Button>
             <Button type="button" color={color} onClick={handleConfirm}>
-              <Icons iconType="checkMark" />
+              <Icons iconSize="1rem" iconType="checkMark" />
               {props.confirmLabel || 'Confirm'}
             </Button>
           </Row>

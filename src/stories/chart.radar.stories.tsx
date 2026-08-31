@@ -1,12 +1,12 @@
 import { Meta } from '@storybook/nextjs-vite';
 
-import { LineChartComponent } from '../components/charts/chart.line';
+import { RadarChartComponent } from '../components/charts/chart.radar';
 
-type Story = Meta<typeof LineChartComponent>;
+type Story = Meta<typeof RadarChartComponent>;
 
 export default {
-  component: LineChartComponent,
-  title: 'Charts/LineChart',
+  component: RadarChartComponent,
+  title: 'Charts/RadarChart',
 } satisfies Story;
 
 export const Default = {
@@ -18,8 +18,8 @@ export const Default = {
       { name: 'Apr', value: 40, value2: 10 },
       { name: 'May', value: 60, value2: 30 },
     ],
+    title: 'Radar Chart Example',
     dataFields: ['value', 'value2'],
-    xField: 'name',
-    title: 'Line Chart Example',
+    nameField: 'name',
   },
 } satisfies Story;

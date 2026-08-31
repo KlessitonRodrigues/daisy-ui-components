@@ -6,7 +6,7 @@ type Story = Meta<typeof RadioInputField>;
 
 export default {
   component: RadioInputField,
-  title: 'Common/RadioInputField',
+  title: 'Common/InputRadio',
 } satisfies Story;
 
 export const Default = {

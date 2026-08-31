@@ -14,7 +14,7 @@ export interface RadioInputFieldProps {
 
 export const RadioInputField = (props: RadioInputFieldProps) => {
   const inputStyles = twMerge([
-    'radio radio-primary mx-2',
+    'radio mx-2',
     toCss(props.size, `radio-${props.size}`, 'radio-md'),
     props.className,
   ]);

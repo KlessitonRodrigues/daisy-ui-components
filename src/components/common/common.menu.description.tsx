@@ -19,7 +19,7 @@ export interface DescriptionMenuProps extends HTMLAttributes<HTMLUListElement> {
 
 export const DescriptionMenu = (props: DescriptionMenuProps) => {
   const { className, items, ...menuProps } = props;
-  const classNames = [`menu w-full h-full lg:min-w-md bg-bg1 ${className}`];
+  const classNames = [`menu w-full h-full gap-1 lg:min-w-md bg-bg1 ${className}`];
 
   return (
     <ul className={twMerge(...classNames)} {...menuProps}>
@@ -32,10 +32,10 @@ export const DescriptionMenu = (props: DescriptionMenuProps) => {
                 <Icons iconType={item.icon} />
               </div>
               <Column flexX="start" gap={0}>
-                <Text size="lg" bold className="text-main">
+                <Text size="lg" bold>
                   {item.label}
                 </Text>
-                <Text tag="p" size="sm" opacity="70">
+                <Text tag="p" size="xs" opacity="70">
                   {item.description}
                 </Text>
               </Column>
