@@ -7,11 +7,12 @@ interface CurrencyCardProps {
   total: string;
   percentage: number;
   amount: string;
+  iconType?: 'chart' | 'wallet' | 'dollar' | 'coin';
   percentageClassName?: string;
 }
 
 export const CurrencyCard = (props: CurrencyCardProps) => {
-  const { total, percentage, amount, percentageClassName } = props;
+  const { total, percentage, amount, percentageClassName, iconType } = props;
 
   return (
     <Card className="w-full lg:max-w-70">
@@ -24,9 +25,9 @@ export const CurrencyCard = (props: CurrencyCardProps) => {
         </Text>
       </Row>
       <Row flexX="between" className="mt-4">
-        <Icons iconType="chart" iconSize="2rem" />
+        <Icons iconType={iconType || 'chart'} iconSize="2rem" />
         <Text bold opacity="70" size="3xl" className="text-blue">
-          {amount}
+          {`$${amount}`}
         </Text>
       </Row>
     </Card>

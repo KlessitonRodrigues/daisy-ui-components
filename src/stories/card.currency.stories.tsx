@@ -13,7 +13,8 @@ export const Default = {
   args: {
     total: 'Total Revenue',
     percentage: 12,
-    amount: '$12,345',
+    amount: '12,345',
     percentageClassName: 'text-green',
+    iconType: 'coin',
   },
 } satisfies Story;
