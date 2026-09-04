@@ -1,16 +1,13 @@
 {
-  "name": "@packages/daisy-ui-components",
+  "name": "@apps/daisy-ui-storybook",
   "version": "1.0.0",
-  "main": "./index.tsx",
-  "types": "./index.tsx",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
   "license": "MIT",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "dev": "storybook dev -p 6006",
+    "build": "storybook build"
   },
   "dependencies": {
     "next": "^16.2.10",
@@ -44,7 +41,7 @@
     "vitest": "latest"
   },
   "exports": {
-    ".": "./index.tsx",
-    "./*": "./*"
+    ".": "./src/index.tsx",
+    "./*": "./src/*"
   }
 }
