@@ -36,5 +36,5 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy CDK
-        run: yarn cdk deploy --require-approval never
-        working-directory: services/
+        run: yarn install && yarn cdk deploy --require-approval never
+        working-directory: aws/
